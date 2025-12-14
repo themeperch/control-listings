@@ -6,6 +6,9 @@ Description: Classifieds ads directory portal manager
 Author: Themeperch
 Version: 1.0.6
 Author URI: https://themeperch.net/
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: control-listings
 */
 
 // Exit if accessed directly.
