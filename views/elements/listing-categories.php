@@ -29,10 +29,11 @@ $attributes = [
             <span class="listing-category-icon text-primary"><?php echo control_listings_get_icon_svg('marker', $icon, 64 ); ?></span>
             <div class="listing-category-info">
               <?php echo control_listings_formated_content($term->name, '<h5 class="mb-0">', '</h5>') ?>
-              <p class="mb-0"><?php printf(__('%s Listings', 'control-listings'), $term->count) ?></p>              
+              
+              <p class="mb-0"><?php /* translators: %s is the number of listings. */ printf(__('%s Listings', 'control-listings'), $term->count) ?></p>              
             </div>
             <div class="position-absolute bottom-0 start-0 w-100">
-              <a class="btn btn-sm btn-primary stretched-link d-block mx-20" href="<?php echo get_term_link($term, 'listing_cat'); ?>"><?php esc_attr_e('Browse Listings', 'control-listings') ?></a>
+              <a class="btn btn-sm btn-primary stretched-link d-block mx-20" href="<?php echo get_term_link($term, 'listing_cat'); ?>"><?php __('Browse Listings', 'control-listings') ?></a>
             </div>
             
           </div>

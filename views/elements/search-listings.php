@@ -20,7 +20,7 @@ $searchform_args = control_listings_get_searchform_args();
             <select class="form-select age-select" name="age">
                 <option><?php echo esc_attr($age_placeholder) ?></option>
                 <?php for ($year=$searchform_args['min_age']; $year < $searchform_args['max_age']; $year++) : ?>
-                    <option value="<?php echo intval($year) ?>"><?php printf(__('%d Year', 'control-listings'), $year) ?></option>
+                    <option value="<?php echo intval($year) ?>"><?php /* translators: %s is the number of years. */ printf(__('%d Year', 'control-listings'), $year) ?></option>
                 <?php endfor; ?>                
             </select>
             <?php endif; ?>
