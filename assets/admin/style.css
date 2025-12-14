@@ -1,0 +1,294 @@
+.fixed .column-sticky_post,
+.fixed .column-favorites{
+    width: 3em;
+    text-align: center;
+}
+a.sticky-posts{
+    text-decoration: none;
+}
+.sticky-posts .dashicons{
+    pointer-events: none;
+}
+
+.button-customize{
+    width: 100%;
+    margin-bottom: 10px !important;
+    text-align: center;
+    display: block !important;
+}
+
+.control-listings-settings-page .rwmb-field .select2-container {
+    width: auto;
+    min-width: 330px;
+  }
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection--single,
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection--multiple {
+    border-radius: 0;
+    padding: 5px 20px 5px 10px;
+    height: 40px;
+  }
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection--single .select2-selection__arrow,
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection--multiple .select2-selection__arrow {
+    height: 38px;
+    width: 38px;
+  }
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection--multiple {
+    height: auto;
+  }
+  .control-listings-settings-page .rwmb-field .select2-container .select2-selection__choice {
+    border-radius: 0;
+  }
+  .control-listings-settings-page .rwmb-field.field-slug .rwmb-input-group-text {
+    border-color: transparent;
+  }
+  .control-listings-settings-page .rwmb-field textarea,
+  .control-listings-settings-page .rwmb-field input[type=email],
+  .control-listings-settings-page .rwmb-field input[type=password],
+  .control-listings-settings-page .rwmb-field input[type=number],
+  .control-listings-settings-page .rwmb-field input[type=text] {
+    border-radius: 0;
+    padding: 5px 10px;
+  }
+  .control-listings-settings-page .rwmb-field input[type=checkbox],
+  .control-listings-settings-page .rwmb-field select,
+  .control-listings-settings-page .rwmb-field .button {
+    border-radius: 0;
+  }
+  .control-listings-settings-page .rwmb-field select {
+    padding: 5px 20px 5px 10px;
+    width: auto;
+  }
+  .control-listings-settings-page .rwmb-field .query-field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .control-listings-settings-page .rwmb-field .query-field input[type=email],
+  .control-listings-settings-page .rwmb-field .query-field input[type=password],
+  .control-listings-settings-page .rwmb-field .query-field input[type=number],
+  .control-listings-settings-page .rwmb-field .query-field input[type=text],
+  .control-listings-settings-page .rwmb-field .query-field select {
+    min-width: initial;
+    width: auto;
+    height: 100%;
+  }
+  .control-listings-settings-page .rwmb-field .query-field .tax-fields-group,
+  .control-listings-settings-page .rwmb-field .query-field p {
+    width: 100%;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+  .control-listings-settings-page .rwmb-field .query-field .description,
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-label {
+    display: none;
+  }
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-field {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-post-wrapper {
+    width: 100%;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+  }
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-post-wrapper .rwmb-input,
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-post-wrapper .description,
+  .control-listings-settings-page .rwmb-field .query-field .rwmb-post-wrapper .rwmb-label {
+    display: block;
+    width: 100%;
+    flex: 0 0 auto;
+    flex-grow: 1;
+  }
+  .control-listings-settings-page .preview-only .rwmb-file-input-image {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #8c8f94;
+    height: 120px;
+    width: 120px;
+    padding: 5px;
+    justify-content: center;
+  }
+  .control-listings-settings-page .preview-only.dark-preview .rwmb-file-input-image {
+    background-color: #8c8f94;
+  }
+  .control-listings-settings-page .preview-only .rwmb-file-input-inner .button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .control-listings-settings-page .preview-only img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .control-listings-settings-page p.submit {
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+    bottom: 0;
+  }
+  .control-listings-settings-page p.submit .button {
+    padding: 5px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #0772ce;
+    border-color: #0772ce;
+    border-radius: 0;
+  }
+  .control-listings-settings-page p.submit .button-danger {
+    color: #d00;
+    border-color: #d00;
+    background-color: transparent;
+  }
+  .control-listings-settings-page p.submit .button-danger:hover, .control-listings-settings-page p.submit .button-danger:focus {
+    background-color: #d00;
+    color: #fff;
+  }
+  .control-listings-settings-page .add-clone {
+    border-radius: 0;
+  }
+  .control-listings-settings-page .nav-tab-wrapper,
+  .control-listings-settings-page p.submit {
+    position: sticky;
+    background-color: #f0f0f1;
+    border-top: 1px solid #c3c4c7;
+    z-index: 999;
+  }
+  .control-listings-settings-page .nav-tab-wrapper {
+    top: var(--wp-admin--admin-bar--height);
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar {
+    min-width: 255px;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 0;
+    line-height: 1;
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar label {
+    font-weight: 500;
+    padding-bottom: 3px;
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar p {
+    margin-top: 0;
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar .postbox-header-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #c3c4c7;
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar .postbox-header-sidebar h2 {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+  }
+  .control-listings-settings-page #poststuff .postbox-sidebar .inside-sidebar {
+    padding: 10px;
+  }
+  .control-listings-settings-page .nav-tab {
+    padding: 5px 15px;
+  }
+  .control-listings-settings-page .rwmb-custom_html-wrapper .description {
+    font-size: 16px;
+    font-style: normal;
+  }
+  .control-listings-settings-page .description {
+    font-style: italic;
+    font-size: 14px;
+  }
+  .control-listings-settings-page #side-sortables img {
+    max-width: 100%;
+    height: auto;
+  }
+  .control-listings-settings-page #side-sortables .postbox {
+    display: block !important;
+  }
+  .control-listings-settings-page .rwmb-tabs-left .rwmb-tab-nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #50575e;
+  }
+  .control-listings-settings-page .postbox-sidebar select {
+    min-width: initial !important;
+    display: block;
+    width: 100% !important;
+  }
+  .control-listings-settings-page .sticky-sidebar {
+    position: sticky;
+    top: var(--wp-admin--admin-bar--height);
+    z-index: 9;
+  }
+  .control-listings-settings-page .image-input .rwmb-file-input-inner .rwmb-file_input {
+    display: none;
+  }
+  .control-listings-settings-page [data-visible=visible] {
+    display: flex !important;
+  }
+  
+  [data-vc-shortcode-param-name=element_id] {
+    display: none !important;
+  }
+  
+  .control-listings-block-presets.rwmb-group-collapsible > .rwmb-input > .rwmb-group-clone:last-of-type {
+    border-top-color: rgb(224, 244, 224);
+  }
+  
+  .rwmb-clone.rwmb-group-collapsed .control-listings-group-field {
+    display: none !important;
+  }
+  
+  .control-listings-group-field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    -moz-column-count: 4;
+         column-count: 4;
+    margin-bottom: 0 !important;
+  }
+  .control-listings-group-field > .rwmb-field .rwmb-label {
+    display: none;
+  }
+  .control-listings-group-field > .rwmb-field .rwmb-input select,
+  .control-listings-group-field > .rwmb-field .rwmb-input input {
+    width: auto;
+    min-width: initial;
+    padding: 1px 10px;
+    border-color: #ddd;
+    color: #3c434a;
+  }
+  .control-listings-group-field > .rwmb-field .rwmb-input select {
+    padding-right: 15px;
+  }
+  
+  .control-listings-file-input-container {
+    display: grid;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .control-listings-file-input-container .image-preview-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    border-radius: 3px;
+  }
+  .control-listings-file-input-container .control-listings-file-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .control-listings-file-input-container .control-listings-file-input-wrap input {
+    padding: 0 5px;
+  }
+  .control-listings-file-input-container.image-input .control-listings-file-input-wrap input {
+    display: none;
+  }/*# sourceMappingURL=admin-style.css.map */

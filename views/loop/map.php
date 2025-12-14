@@ -1,0 +1,1 @@
+<div id="controlListingsMap"<?php echo !empty($css_class)? ' class="'.esc_attr($css_class).'"' : '' ?>></div>
