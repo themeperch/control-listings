@@ -139,7 +139,11 @@ class RWMB_Group_Field extends RWMB_Field {
 		];
 
 		echo '<div class="rwmb-group-title-wrapper">';
-		echo '<h4 ', self::render_attributes( $title_attributes ), '>', $title, '</h4>';
+		echo wp_kses('<h4 '. self::render_attributes( $title_attributes ). '>'. wp_kses_post($title). '</h4>', [
+			'h4' => [
+				'class' => true,
+				'data-options' => true
+			]]);
 		if ( $field['clone'] ) {
 			echo '<a href="javascript:;" class="rwmb-group-remove">', esc_html__( 'Remove', 'control-listings' ), '</a>';
 		}
