@@ -1,4 +1,4 @@
-* Control Listings - Classifieds Ads Directory Portal Manager *
+# Control Listings - Classifieds Ads Directory Portal Manager #  
 Contributors: themeperch, razib_  
 Tags: directory, listing, business portal, Classifieds Ads, listing management  
 Requires at least: 6.0  
@@ -8,9 +8,9 @@ Stable tag: 1.0.6
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
-** The ultimate directory manager for efficient listing control. Seamlessly add listings to your Citykid WordPress directory or classified ads portal. **  
+**The ultimate directory manager for efficient listing control. Seamlessly add listings to your Citykid WordPress directory or classified ads portal.**
 
-== Description ==
+## Description ##
 
 **Control Listings** is a versatile directory plugin for effective listing management. Create a classifieds ads portal or business directory with ease! Use its powerful listing manager to add, edit, and organize listings on your site. With its user-friendly interface, you can quickly create, edit and delete listings right from the frontend of your website. Simplify your listing process with this plugin.
 
@@ -26,28 +26,28 @@ The plugin also includes an advanced search feature, allowing users to filter th
 
 Overall, **Control Listings** is a powerful plugin that provides a range of features for managing and showcasing your directory listings. Whether you're creating a business directory, real estate directory, or any other type of directory, this plugin is sure to make your life easier and enhance the user experience for your visitors.
 
-= Listing Archive Page Support =
+### Listing Archive Page Support ###
 Easily create and showcase your listings with dedicated support for listing archive pages. Present your listings in grid view, list view, or map view layouts.
 
-= Map View Integration =
+### Map View Integration ###
 Display listings on a map effortlessly, with no API key required. Control Listings supports OpenStreetMap (OSM), allowing users to locate listings with ease.
 
-= Bootstrap 5 Compatibility =
+### Bootstrap 5 Compatibility ###
 The plugin seamlessly integrates with Bootstrap 5, ensuring a responsive and modern display of your listings.
 
-= Archive Types Demo Links =
+### Archive Types Demo Links ###
 Explore different archive types and visualize their presentation styles through demo links provided by Control Listings.
 
-= Advanced Search and Filter =
+### Advanced Search and Filter ###
 Empower users to find specific listings by implementing an advanced search and filtering system. Users can narrow down results based on location, price range, category, and more.
 
-= Multiple Sorting Options =
+### Multiple Sorting Options ###
 Enhance user experience by offering various sorting options such as relevance, price, rating, and listing age, enabling users to find the most suitable listings quickly.
 
-= Detailed Listing Cards =
+### Detailed Listing Cards ###
 Each listing card provides comprehensive information, including an image, title, short description, features list, price, rating, listing age, add to favorites option, like option, and social share buttons.
 
-= Single Listing Features: = 
+### Single Listing Features: ### 
 - Slider: Display multiple images of the listing in an attractive slider format.
 - Title: Show the title of the listing prominently.
 - Listing Age: Display the age of the listing to provide relevant information.
@@ -64,21 +64,21 @@ Each listing card provides comprehensive information, including an image, title,
 - Rating & Reviews: Allow users to leave ratings and reviews for the listing.
 
 
-== How to Use the Plugin ==
+## How to Use the Plugin ##
 After installing and activating the plugin, you should see a new **Listings** menu item in your WordPress admin. You can create a new listing just like you would any post or page from that point. The process is as follows, which may help you.
 
 1. Click on the **Listings** menu item in the sidebar admin menu.
 2. Click on the **Add New** button.
 3. Give a name for your listing
 
-== Are you a theme author? ==
+## Are you a theme author? ##
 As a theme developer, you need flexibility and customization options. Our plugin offers:
 
 1. Easy template overrides in theme or child theme folder 
 2. Many hooks and filters for customization 
 3. Optimized to work with Bootstrap 5 
 
-== Installation ==
+## Installation ##
 
 **Installation directly from your site**
 
@@ -94,35 +94,35 @@ As a theme developer, you need flexibility and customization options. Our plugin
 3. Log into WordPress and navigate to the Plugins screen
 4. Locate *Control Listings* in the list and click the *Activate* link.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions ##
 
-= Can I customize the appearance of the listing cards? =
+### Can I customize the appearance of the listing cards? ###
 Yes, Control Listings provides customization options to style the listing cards according to your preferences. You can customize the colors, fonts, and layout using CSS or by using the built-in customization settings.
 
-= Can users save their favorite listings? =
+### Can users save their favorite listings? ###
 Yes, Control Listings includes a "Add to Favorites" feature, allowing users to save their favorite listings for future reference. They can easily access their saved listings from their user account dashboard.
 
-= Can I monetize my directory using Control Listings? =
+### Can I monetize my directory using Control Listings? ###
 Yes, you can monetize your directory by integrating with popular payment gateways. Control Listings offers compatibility with popular payment plugins, allowing you to charge users for listing submissions, featured listings, or premium memberships.
 
-= Is Control Listings compatible with SEO plugins? =
+### Is Control Listings compatible with SEO plugins? ###
 Yes, Control Listings is designed to be compatible with popular SEO plugins like Yoast SEO and All in One SEO Pack. You can optimize your directory listings for search engines and improve your website's visibility.
 
-= Can I translate Control Listings into my language? =
+### Can I translate Control Listings into my language? ###
 Yes, Control Listings is translation-ready and supports localization. You can easily translate the plugin into your desired language using translation files or popular translation plugins.
 
-= Does Control Listings offer support for custom fields? =
+### Does Control Listings offer support for custom fields? ###
 Yes, Control Listings provides the ability to create custom fields for your listings. You can add additional fields to capture specific information relevant to your directory, such as contact details, amenities, or pricing options.
 
-= Can I import listings from another plugin or platform? =
+### Can I import listings from another plugin or platform? ###
 Control Listings includes an import feature that allows you to import listings from CSV files. You can migrate your existing listings from another directory plugin or platform easily.
 
-= How can I get support for Control Listings? =
+### How can I get support for Control Listings? ###
 For support or any questions related to Control Listings, you can reach out to our dedicated support team through our website or contact us via email. We strive to provide timely assistance and ensure that you have a smooth experience with our plugin.
 
 
 
-== Screenshots ==
+## Screenshots ##
 1. Listings post type admin view
 2. Listings frontend map view
 3. Customizer control for archive page listings
@@ -133,11 +133,11 @@ For support or any questions related to Control Listings, you can reach out to o
 8. Single listing frontend view
 9. Single listing backend view
 
-= 1.0.6 =
+### 1.0.6 ###
 * Updated vendor files
 * Updated CSS
 
-= 1.0.5 =
+### 1.0.5 ###
 * Fixed group field issues
 * Fixed Patchstack Vulnerability Issues 
 * Added customize button in the sidebar
@@ -147,19 +147,19 @@ For support or any questions related to Control Listings, you can reach out to o
 * Updated vendor files
 * Updated CSS
 
-= 1.0.3 =
+### 1.0.3 ###
 * Map view settings added in the customizer
 * Additional hooks added
 * Updated CSS
 
-= 1.0.2 =
+### 1.0.2 ###
 * Fixed PHP errors
 * Added settings Bootsrtap CSS & JS
 * Updated CSS
 
-= 1.0.1 =
+### 1.0.1 ###
 * Fixed JavaScripts issues
 * Updated CSS
 
-= 1.0.0 =
+### 1.0.0 ###
 * Initially Released
