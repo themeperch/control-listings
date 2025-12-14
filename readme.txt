@@ -1,5 +1,5 @@
 === Control Listings - Classifieds Ads Directory Portal Manager ===
-Contributors: themeperch, razib_, upamahin
+Contributors: themeperch, razib_
 Tags: directory, listing, business portal, Classifieds Ads, listing management
 Requires at least: 6.0
 Tested up to: 6.9
