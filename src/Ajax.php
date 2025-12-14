@@ -26,23 +26,23 @@ class Ajax {
 
 	public function do_ajax(){
 		if(!wp_verify_nonce( $_POST['nonce'], 'controlListings' )){
-			die( __( 'Security check', 'control-listings' ) ); 
+			die( esc_attr__( 'Security check', 'control-listings' ) ); 
 		}
 		
 		if(empty($_POST['data']['action'])){
 			Helper::debug_log($_POST['data']['action']);
-			wp_die('Action is missing', 'Button error!!', $_POST['data']);
+			wp_die('Action is missing', 'Button error!!', esc_js($_POST['data']));
 		}
 
 		$method_name = $_POST['data']['action'];
 		
 		
 		if(!method_exists($this, $method_name)){
-			wp_die('Method missing', $method_name, $_POST['data']);
+			wp_die('Method missing', esc_attr($method_name), esc_js($_POST['data']));
 		}
 		
 		
-		call_user_func( [$this, $method_name], $_POST);
+		call_user_func( [$this, esc_attr($method_name)], $_POST);
 
 		wp_die();
 	}
@@ -181,7 +181,7 @@ class Ajax {
 			
             // Check capabilities
             if (!current_user_can( $post_type_object->cap->edit_others_posts ) || !current_user_can( $post_type_object->cap->publish_posts ) ) {
-                wp_send_json_error(__('Sorry, you are not allowed to edit this item.', 'control-listings'));
+                wp_send_json_error(esc_attr__('Sorry, you are not allowed to edit this item.', 'control-listings'));
             }
 
             // Mark the post as currently being edited by the current user
