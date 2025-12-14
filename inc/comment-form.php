@@ -75,7 +75,7 @@ function control_listings_comment_require_rating( $commentdata ) {
 		if( !$field['enable']) continue;
 		$name = $field['name'];
 		if ( ! is_admin() && ( ! isset( $_POST[$name] ) || 0 === intval( $_POST[$name] ) ) )
-		wp_die( __( 'Error: You did not add a rating. Hit the Back button on your Web browser and resubmit your review with a rating.', 'control-listings' ) );
+		wp_die( esc_attr__( 'Error: You did not add a rating. Hit the Back button on your Web browser and resubmit your review with a rating.', 'control-listings' ) );
 	endforeach;	
 	return $commentdata;
 }
@@ -223,9 +223,9 @@ function control_listings_edit_review_link(){
 	$comment = get_comment();
 	$edit_review = __( 'Edit', 'control-listings' );
 	if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) {
-		edit_comment_link( $edit_review, ' <span class="edit-link">', '</span>' );
+		edit_comment_link( esc_attr($edit_review), ' <span class="edit-link">', '</span>' );
 	}elseif(get_current_user_id() == $comment->user_id){
-		printf('<span class="edit-link"><a href="#" class="comment-edit-link">%s</a></span>', $edit_review);
+		printf('<span class="edit-link"><a href="#" class="comment-edit-link">%s</a></span>', esc_attr($edit_review));
 	}
 
 	
