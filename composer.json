@@ -1,0 +1,18 @@
+{
+  "name": "themeperch/control-listings",
+  "description": "Take Control of Your Listings with Control Listings Plugin",
+  "autoload": {                
+      "psr-4": {
+          "ControlListings\\": "src/"
+      },
+      "files": [       
+        "inc/functions.php"
+      ]
+  },
+  "authors": [
+      {
+          "name": "Themeperch",
+          "email": "themeperch@gmail.com"
+      }
+  ]
+}
