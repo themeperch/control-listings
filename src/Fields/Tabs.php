@@ -126,7 +126,7 @@ class Tabs {
 					'<li class="%s" data-panel="%s"><a href="#">%s%s</a></li>',
 					esc_attr( $class ),
 					esc_attr( $key ),
-					$icon,
+					wp_kses_post($icon),
 					esc_html( $tab_data['label'] )
 				);
 				$i ++;
