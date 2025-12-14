@@ -39,6 +39,7 @@ class Listing_Videos extends \Elementor\Widget_Base{
 			[
 				'label' => esc_html__( 'Name', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
+				/* translators: %s: Current year */
 				'default' => sprintf(esc_html__( 'Welcome to Listingor Conference %s', 'control-listings' ), date('Y')),
 				'label_block' => true
 			]

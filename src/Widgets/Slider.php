@@ -74,6 +74,7 @@ class Slider extends \Elementor\Widget_Base{
 			[
 				'label' => esc_html__( 'Big title', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
+				/* translators: %s: Current year */
 				'default' => sprintf(esc_html__( 'CONF %s', 'control-listings' ), date('Y')),
 			]
 		);
@@ -206,7 +207,7 @@ class Slider extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'about_listing_style',
 			[
-				'label' => esc_html__( 'Background', 'elementor-addon' ),
+				'label' => esc_html__( 'Background', 'control-listings' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);

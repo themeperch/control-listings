@@ -155,7 +155,7 @@ class About_Listing extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'about_listing_style',
 			[
-				'label' => esc_html__( 'Background', 'elementor-addon' ),
+				'label' => esc_html__( 'Background', 'control-listings' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
