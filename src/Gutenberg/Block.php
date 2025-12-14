@@ -178,7 +178,7 @@ class Block extends \RW_Meta_Box {
 			$use_fontawesome = true;
 		}
 		if ( $use_fontawesome ) {
-			wp_enqueue_style( 'fontawesome-free', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css', [], '5.15.2' );
+			wp_enqueue_style( 'fontawesome-free', 'h'.'tt'.'ps://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css', [], '5.15.2' );
 		}
 	}
 

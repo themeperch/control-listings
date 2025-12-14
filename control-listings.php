@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Control Listings
+Plugin Name: Control Listings - Classifieds Ads Directory Portal Manager
 Plugin URI: https://controllistings.com
 Description: Classifieds ads directory portal manager
 Author: Themeperch

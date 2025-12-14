@@ -222,7 +222,7 @@ class Bookmarks {
 		if ( wp_doing_ajax() ) {
 			wp_send_json( $action_data, ! empty( $action_data['error_code'] ) ? $action_data['error_code'] : 200 );
 		} else {
-			wp_redirect( remove_query_arg( array( 'submit_bookmark', 'remove_bookmark', '_wpnonce', 'wpjm-ajax' ) ) );
+			wp_safe_redirect( remove_query_arg( array( 'submit_bookmark', 'remove_bookmark', '_wpnonce', 'wpjm-ajax' ) ) );
 		}
 	}
 
