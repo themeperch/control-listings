@@ -1,5 +1,5 @@
 
-<a href="<?php echo admin_url('/customize.php?autofocus[panel]=listing-options') ?>" target="_blank" class="button button-primary button-customize">Customize</a>
+<a href="<?php echo esc_url(admin_url('/customize.php?autofocus[panel]=listing-options')) ?>" target="_blank" class="button button-primary button-customize">Customize</a>
 
 
 <div class="postbox-sidebar">
@@ -11,7 +11,7 @@
             <p>Thanks for using <strong>Control Listings</strong> plugin!</p>           
             <ul>
                 <li>Plugin: Control Listings</li>
-                <li>Version: <?php echo CTRL_LISTINGS_VER; ?></li>
+                <li>Version: <?php echo esc_attr(CTRL_LISTINGS_VER); ?></li>
                 <li>Author: <a href="https://themeperch.net" target="_blank">Themeperch</a></li>
                 <li>Support: <a href="https://controllistings.com/contact/" target="_blank">Contact our support team</a> for assistance.</li>
             </ul>            
