@@ -3,15 +3,15 @@
         <?php
         // phpcs:disable WordPress.Security
         if ( 1 === intval( $total ) ) {
-            _e( 'Showing the single result', 'control-job-manager' );
+            _e( 'Showing the single result', 'control-listings' );
         } elseif ( $total <= $per_page || -1 === $per_page ) {
             /* translators: %d: total results */
-            printf( _n( 'Showing all %s result', 'Showing all %s results', $total, 'control-job-manager' ), '<strong>'.$total.'</strong>' );
+            printf( _n( 'Showing all %s result', 'Showing all %s results', $total, 'control-listings' ), '<strong>'.$total.'</strong>' );
         } else {
             $first = ( $per_page * $current_page ) - $per_page + 1;
             $last  = min( $total, $per_page * $current_page );
             /* translators: 1: first result 2: last result 3: total results */
-            printf( _nx( 'Showing %1$s&ndash;%2$s of %3$s result', 'Showing %1$s&ndash;%2$s of %3$s results', $total, 'with first and last result', 'control-job-manager' ), '<strong>'.$first.'</strong>', '<strong>'.$last.'</strong>', '<strong>'.$total.'</strong>' );
+            printf( _nx( 'Showing %1$s&ndash;%2$s of %3$s result', 'Showing %1$s&ndash;%2$s of %3$s results', $total, 'with first and last result', 'control-listings' ), '<strong>'.$first.'</strong>', '<strong>'.$last.'</strong>', '<strong>'.$total.'</strong>' );
         }
         // phpcs:enable WordPress.Security
         ?>
