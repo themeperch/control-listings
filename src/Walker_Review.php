@@ -19,9 +19,9 @@ class Walker_Review extends \Walker_Comment {
 		$show_pending_links = ! empty( $commenter['comment_author'] );
 
 		if ( $commenter['comment_author_email'] ) {
-			$moderation_note = __( 'Your comment is awaiting moderation.' );
+			$moderation_note = __( 'Your comment is awaiting moderation.', 'control-listings' );
 		} else {
-			$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' );
+			$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'control-listings' );
 		}
 		?>
 		<<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
@@ -43,10 +43,8 @@ class Walker_Review extends \Walker_Comment {
 							$comment_author = get_comment_author( $comment );
 						}
 
-						printf(
-							/* translators: %s: Comment author link. */
-							__( '<span class="reviewr-name">%s <span class="says">says:</span></span>' ),
-							sprintf( '<b class="fn">%s</b>', $comment_author )
+						printf(	'<span class="reviewr-name">%1$s <span class="says">%2$s</span></span>',
+							sprintf( '<b class="fn">%s</b>', $comment_author ), __('says:', 'control-listings')
 						);
 						?>
 						<?php
@@ -56,7 +54,7 @@ class Walker_Review extends \Walker_Comment {
 							get_comment_time( 'c' ),
 							sprintf(
 								/* translators: 1: Comment date, 2: Comment time. */
-								__( '%1$s at %2$s' ),
+								_x( '%1$s at %2$s', 'Comments date time', 'control-listings' ),
 								get_comment_date( '', $comment ),
 								get_comment_time()
 							)
