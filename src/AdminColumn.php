@@ -38,7 +38,7 @@ class AdminColumn {
 	}
 	public function customize_admin_column( $column_key, $post_id ) {
 		if( 'favorites' === $column_key ) {
-			echo Favorite::get_count( $post_id );
+			echo esc_attr(Favorite::get_count( intval($post_id) ));
 		}
 
 		if( 'sticky_post' === $column_key ) {
@@ -54,13 +54,13 @@ class AdminColumn {
 			}
 
 			printf('<a id="%s" title="%s" class="%s" %s href="javascript:void(0);" data-id="%d" data-nonce="%s"><span class="dashicons %s"></span></a>',
-				'stiky-post-'.$post_id,
-				is_sticky($post_id)? __('Featured listing', 'control-listings') : __('Click to make listing featured', 'control-listings'),
-				$hyperlink_class,
-				$hyperlink_style,
-				$post_id,
-				wp_create_nonce('sticky-post-nonce'),
-				$icon_class
+				'stiky-post-'.intval($post_id),
+				is_sticky($post_id)? esc_attr__('Featured listing', 'control-listings') : esc_attr__('Click to make listing featured', 'control-listings'),
+				esc_attr($hyperlink_class),
+				esc_attr($hyperlink_style),
+				intval($post_id),
+				esc_attr(wp_create_nonce('sticky-post-nonce')),
+				esc_attr($icon_class)
 			);
 
 			
