@@ -984,7 +984,7 @@ function control_listings_render_block_template($attributes, $is_preview = false
 		return;
 	}else{
 		if(is_user_logged_in()){
-			_e('template not found!!!', 'control-listings'); 
+			esc_attr_e('template not found!!!', 'control-listings'); 
 		}
 		
 	}	
