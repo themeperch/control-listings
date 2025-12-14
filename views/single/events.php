@@ -6,7 +6,8 @@ $count = 1;
     <h2 class="listing-events-title mb-30"><?php esc_attr_e('Upcoming Events', 'control-listings') ?></h2>
     <div class="d-grid gap-30">
         <?php foreach ($events as $event): 
-            $event_date = sprintf(esc_attr_x('at %s to %s', 'Event start to end date', 'control-listings'), 
+            /* translators: %1$s is the event start date and time, %2$s is the event end date and time. */
+            $event_date = sprintf(esc_attr_x('at %1$s to %2$s', 'Event start to end date', 'control-listings'), 
             date("F j, Y g:i A", strtotime($event['start_date'])),
             date("F j, Y g:i A", strtotime($event['end_date'])),
         );
