@@ -14,12 +14,17 @@ class Conditional_Logic {
 	}
 
 	public function insert_meta_box_conditions( $obj ) {
-		echo $this->get_conditions_html( $obj->meta_box );
+		echo wp_kses($this->get_conditions_html( $obj->meta_box ), [
+			'template' => [
+				'class' => [],
+				'data-conditions' => [],
+			],
+		]);
 	}
 
 	public function insert_toggle_type( $obj ) {
 		if ( $obj->toggle_type ) {
-			echo '<template class="mbc-toggle-type" data-toggle_type="' . esc_attr( $obj->toggle_type ) . '"></template>';
+			echo ''.'<template class="mbc-toggle-type" data-toggle_type="' . esc_attr( $obj->toggle_type ) . '"></template>';
 		}
 	}
 
