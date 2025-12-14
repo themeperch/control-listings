@@ -51,7 +51,7 @@ class MetaBox extends \RW_Meta_Box {
 
 		parent::enqueue();
 
-		wp_enqueue_style( 'mb-term-meta', CTRL_LISTINGS_ASSETS . '/term/term-meta.css', '', '1.2.8' );
+		wp_enqueue_style( 'control-listings', CTRL_LISTINGS_ASSETS . '/term/term-meta.css', '', '1.2.8' );
 
 		// Only load these scripts on add term page.
 		$screen = get_current_screen();
@@ -59,9 +59,9 @@ class MetaBox extends \RW_Meta_Box {
 			return;
 		}
 
-		wp_enqueue_script( 'mb-term-meta', CTRL_LISTINGS_ASSETS . '/term/term-meta.js', array( 'jquery' ), '1.2.8', true );
-		wp_localize_script( 'mb-term-meta', 'MBTermMeta', array(
-			'addedMessage' => __( 'Term added.', 'mb-term-meta' ),
+		wp_enqueue_script( 'control-listings', CTRL_LISTINGS_ASSETS . '/term/term-meta.js', array( 'jquery' ), '1.2.8', true );
+		wp_localize_script( 'control-listings', 'MBTermMeta', array(
+			'addedMessage' => __( 'Term added.', 'control-listings' ),
 		) );
 	}
 
