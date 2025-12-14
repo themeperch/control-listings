@@ -309,7 +309,7 @@ function control_listings_search_form_hidden_fields(){
         
     if(!empty(get_query_var('sort'))):
     ?>
-    <input type="hidden" name="sort" value="<?php echo  get_query_var('sort') ?>">
+    <input type="hidden" name="sort" value="<?php echo  esc_attr(get_query_var('sort')); ?>">
     <?php endif; ?>
     <?php
 }
@@ -400,7 +400,7 @@ function control_listings_add_listing_button($echo = true){
     ];
     ob_start();
     control_listings_locate_template('elements/add-listing-button.php', $args);
-    if($echo) echo ob_get_clean();
+    if($echo) echo wp_kses_post(ob_get_clean());
     else
     return ob_get_clean();
 
