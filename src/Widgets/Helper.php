@@ -1,6 +1,6 @@
 <?php
-defined( 'ABSPATH' ) || exit;
 namespace ControlListings\Widgets;
+defined( 'ABSPATH' ) || exit;
 
 trait Helper{
 

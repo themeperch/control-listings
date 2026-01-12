@@ -1,6 +1,6 @@
 <?php
-defined( 'ABSPATH' ) || exit;
 namespace ControlListings\Widgets;
+defined( 'ABSPATH' ) || exit;
 
 class About_Listing extends \Elementor\Widget_Base{
     public function get_name() {
