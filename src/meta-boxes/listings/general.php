@@ -38,7 +38,7 @@ return [
         'name'          => __( 'Price limit minimum', 'control-listings' ),
         'id'            => $prefix . 'min_price',
         'type'          => 'number',
-        'append'        => get_control_listings_currency(),   
+        'append'        => control_listings_get_currency(),   
         'desc'          => __( 'Number only', 'control-listings' ),
         'tab'           => $tab
     ], 
@@ -46,7 +46,7 @@ return [
         'name'          => __( 'Price limit maximum', 'control-listings' ),
         'id'            => $prefix . 'max_price',
         'type'          => 'number',   
-        'append'        => get_control_listings_currency(),    
+        'append'        => control_listings_get_currency(),    
         'desc'          => __( 'Number only', 'control-listings' ), 
         'tab'           => $tab
     ],    

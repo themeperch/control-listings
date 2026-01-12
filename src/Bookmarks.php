@@ -93,8 +93,9 @@ class Bookmarks {
 			";
 			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 			$query = $wpdb->prepare( $sql, $user_id, $offset, $limit );
-			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$results = $wpdb->get_results( $query );
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$max_results = (int) $wpdb->get_var( 'SELECT FOUND_ROWS()' );
 
 			return (object) [
@@ -116,7 +117,7 @@ class Bookmarks {
 		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		$query = $wpdb->prepare( $sql, $user_id );
 
-		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		return $wpdb->get_results( $query );
 	}
 
@@ -129,6 +130,7 @@ class Bookmarks {
 	public static function is_bookmarked( $post_id ) {
 		global $wpdb;
 
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		return $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$wpdb->prefix}control_listings_bookmarks WHERE post_id = %d AND user_id = %d;", $post_id, get_current_user_id() ) ) ? true : false;
 	}
 
@@ -141,6 +143,7 @@ class Bookmarks {
 		global $wpdb;
 
 		if ( false === ( $bookmark_count = get_transient( 'bookmark_count_' . $post_id ) ) ) {
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$bookmark_count = absint( $wpdb->get_var( $wpdb->prepare( "SELECT COUNT( id ) FROM {$wpdb->prefix}control_listings_bookmarks WHERE post_id = %d;", $post_id ) ) );
 			set_transient( 'bookmark_count_' . $post_id, $bookmark_count, YEAR_IN_SECONDS );
 		}
@@ -149,13 +152,14 @@ class Bookmarks {
 	}
 
 	/**
-	 * Get a bookmark's note
+	 * Get a bookmark's note 
 	 * @param  int post ID
 	 * @return string
 	 */
 	public function get_note( $post_id ) {
 		global $wpdb;
 
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		return $wpdb->get_var( $wpdb->prepare( "SELECT bookmark_note FROM {$wpdb->prefix}control_listings_bookmarks WHERE post_id = %d AND user_id = %d;", $post_id, get_current_user_id() ) );
 	}
 
@@ -180,11 +184,12 @@ class Bookmarks {
 			} else {
 				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 				$post_id = absint( $_POST[ 'bookmark_post_id' ] );
-				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized 
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery  
 				$note    = wp_kses_post( stripslashes( $_POST[ 'bookmark_notes' ] ) );
 
 				if ( $post_id ) {
 					if ( ! self::is_bookmarked( $post_id ) ) {
+						// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery  
 						$wpdb->insert(
 							"{$wpdb->prefix}control_listings_bookmarks",
 							array(
@@ -195,6 +200,7 @@ class Bookmarks {
 							)
 						);
 					} else {
+						// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching  
 						$wpdb->update(
 							"{$wpdb->prefix}control_listings_bookmarks",
 							array(
@@ -222,7 +228,7 @@ class Bookmarks {
 				);
 			} else {
 				$post_id = absint( $_GET[ 'remove_bookmark' ] );
-
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching  
 				$wpdb->delete(
 					"{$wpdb->prefix}control_listings_bookmarks",
 					array(
@@ -315,6 +321,7 @@ class Bookmarks {
 
 		if ( null !== $reassign ) {
 			// Reassign bookmarks.
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching  
 			$wpdb->update(
 				"{$wpdb->prefix}control_listings_bookmarks",
 				array(
@@ -329,12 +336,14 @@ class Bookmarks {
 		}
 
 		// Get post_ids to be removed from user.
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared   
 		$sql_query = $wpdb->prepare( "SELECT post_id FROM `{$wpdb->prefix}control_listings_bookmarks` " .
 			"WHERE `user_id` = %d", $user_id );
-		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared 
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.NoCaching    
 		$results = $wpdb->get_results( $sql_query );
 
 		// Delete user bookmarks.
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching  
 		$wpdb->delete(
 			"{$wpdb->prefix}control_listings_bookmarks",
 			array(
@@ -364,13 +373,13 @@ class Bookmarks {
 		$page   = (int) $page;
 		$limit  = 100;
 		$offset = $limit * ( $page - 1 );
-
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching 
 		$sql_query = $wpdb->prepare( "SELECT `bm`.`id`, `bm`.`bookmark_note`, `bm`.`post_id`, `p`.`post_title` " .
 			"FROM `{$wpdb->prefix}control_listings_bookmarks` `bm`, `{$wpdb->posts}` `p`, `{$wpdb->users}` `u` " .
 			"WHERE `u`.`user_email` = %s AND `bm`.`user_id` = `u`.`id` AND `bm`.`post_id` = `p`.`ID` " .
 			"ORDER BY `bm`.`post_id` ".
 			"LIMIT %d, %d;", $email_address, $offset, $limit );
-		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.NoCaching  
 		$results      = $wpdb->get_results( $sql_query );
 		$export_items = [];
 

@@ -11,8 +11,8 @@
                 <label for="listingSearchAge"><?php esc_attr_e('Age: min-max (Years)', 'control-listings') ?></label> 
             </div>
             <div class="form-floating">
-                <input id="listingSearchPrice" type="text" name="price" class="form-control" placeholder="<?php /* translators: %s is the currency symbol. */ printf(esc_attr__('Price: (in %s)', 'control-listings'), esc_attr(get_control_listings_currency())) ?>" value="<?php echo esc_attr(get_query_var('price')); ?>"  pattern="[0-9]" />
-                <label for="listingSearchPrice"><?php /* translators: %s is the currency symbol. */ printf(esc_attr__('Price: (%s)', 'control-listings'), esc_attr(get_control_listings_currency())) ?></label> 
+                <input id="listingSearchPrice" type="text" name="price" class="form-control" placeholder="<?php /* translators: %s is the currency symbol. */ printf(esc_attr__('Price: (in %s)', 'control-listings'), esc_attr(control_listings_get_currency())) ?>" value="<?php echo esc_attr(get_query_var('price')); ?>"  pattern="[0-9]" />
+                <label for="listingSearchPrice"><?php /* translators: %s is the currency symbol. */ printf(esc_attr__('Price: (%s)', 'control-listings'), esc_attr(control_listings_get_currency())) ?></label> 
             </div>
             <?php
             $terms = get_terms( array(

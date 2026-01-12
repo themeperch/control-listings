@@ -4,7 +4,7 @@ Plugin Name: Control Listings - Classifieds Ads Directory Portal Manager
 Plugin URI: https://controllistings.com
 Description: Classifieds ads directory portal manager
 Author: Themeperch
-Version: 1.0.6
+Version: 1.0.7
 Author URI: https://themeperch.net/
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -32,7 +32,7 @@ class Control_Listings_Init{
 
 	private function constants(){
 		define( 'CTRL_LISTINGS_URI', trailingslashit(plugin_dir_url( __FILE__ )) );
-		define( 'CTRL_LISTINGS_VER', '1.0.6' );
+		define( 'CTRL_LISTINGS_VER', '1.0.7' );
 		define( 'CTRL_LISTINGS_ASSETS', trailingslashit(CTRL_LISTINGS_URI.'assets') );
 		define( 'CTRL_LISTINGS_DIR', trailingslashit(plugin_dir_path( __FILE__ )) );
 		define( 'CTRL_LISTINGS_TEMPLATEPATH', trailingslashit(plugin_dir_path( __FILE__ ).'views') );
@@ -69,6 +69,7 @@ class Control_Listings_Init{
 	public function activate( $network_wide ) {
 		if( is_multisite() && $network_wide ) {
 			global $wpdb;
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching 
 			foreach( $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" ) as $blog_id ) {
 				switch_to_blog( $blog_id );
 				$this->install();

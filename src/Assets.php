@@ -51,7 +51,7 @@ final class Assets{
     }
 
     public function enqueue_scripts(){
-        //if(!is_control_listings_page()) return;
+        //if(!control_listings_is_page()) return;
         $load_bs5_css = apply_filters('control_listings_templates_load_bs5_css', control_listings_setting('load_bs5_css', false));
         if( $load_bs5_css ){
             wp_enqueue_style('bootstrap' );

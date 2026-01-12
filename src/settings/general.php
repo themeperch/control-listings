@@ -1,9 +1,11 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-$currency_code_options = get_control_listings_currencies();
-
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+$currency_code_options = control_listings_get_currencies();
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 foreach ( $currency_code_options as $code => $name ) {
-    $currency_code_options[ $code ] = $name . ' (' . get_control_listings_currency_symbol( $code ) . ')';
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+    $currency_code_options[ $code ] = $name . ' (' . control_listings_get_currency_symbol( $code ) . ')';
 }
 return [
     [

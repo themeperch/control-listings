@@ -194,7 +194,7 @@ function control_listings_template_part( $slug, $name = null, $args = array() ) 
 	 * @param string|null $name The name of the specialized template.
 	 * @param array       $args Additional arguments passed to the template.
 	 */
-	do_action( "get_template_part_{$slug}", $slug, $name, $args );
+	do_action( "control_listing_control_listing_get_template_part_{$slug}", $slug, $name, $args );
 
 	$templates = array();
 	$name      = (string) $name;
@@ -212,7 +212,7 @@ function control_listings_template_part( $slug, $name = null, $args = array() ) 
 	 * @param string[] $templates Array of template files to search for, in order.
 	 * @param array    $args      Additional arguments passed to the template.
 	 */
-	do_action( 'get_template_part', $slug, $name, $templates, $args );
+	do_action( 'control_listing_get_template_part', $slug, $name, $templates, $args );
 	
 	if ( ! control_listings_template( $templates, true, false, $args ) ) {
 		return false;
@@ -321,12 +321,12 @@ function control_listings_button_html($button, $prefix= '', $echo = true){
 }
 endif;
 
-if(!function_exists('is_control_listings_page')):
+if(!function_exists('control_listings_is_page')):
 /**
  *  
  * @return	boolean	
 */
-function is_control_listings_page(){
+function control_listings_is_page(){
 	if( is_archive('ctrl_listings') ){
 		return true;
 	}
@@ -359,7 +359,8 @@ function control_listings_meta_values( $key = '', $type = 'ctrl_listings', $stat
     
     if( empty( $key ) )
         return;
-    
+
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching 
     $r = $wpdb->get_results( $wpdb->prepare( "
         SELECT pm.meta_value, pm.post_id FROM {$wpdb->postmeta} pm
         LEFT JOIN {$wpdb->posts} p ON p.ID = pm.post_id
@@ -1211,23 +1212,23 @@ function control_listings_get_attachment_url($attachment_id){
 	return  wp_get_attachment_url($attachment_id);
 }
 
-if ( ! function_exists( 'mb_get_block_field' ) ) {
-	function mb_get_block_field( $field_id, $args = [] ) {
+if ( ! function_exists( 'control_listings_mb_get_block_field' ) ) {
+	function control_listings_mb_get_block_field( $field_id, $args = [] ) {
 		$block_name          = MBBlocks\ActiveBlock::get_block_name();
 		$args['object_type'] = 'block';
 		return rwmb_get_value( $field_id, $args, $block_name );
 	}
 }
 
-if ( ! function_exists( 'mb_the_block_field' ) ) {
-	function mb_the_block_field( $field_id, $args = [], $echo = true ) {
+if ( ! function_exists( 'control_listings_mb_the_block_field' ) ) {
+	function control_listings_mb_the_block_field( $field_id, $args = [], $echo = true ) {
 		$block_name          = MBBlocks\ActiveBlock::get_block_name();
 		$args['object_type'] = 'block';
 		return rwmb_the_value( $field_id, $args, $block_name, $echo );
 	}
 }
 
-function check_is_inactive_control_listings_pro($echo = false, $output = ''){
+function control_listings_check_is_inactive_pro($echo = false, $output = ''){
 	
 	if(!defined('CTRL_LISTINGS_PRO_VER')):
 		$output =  __('Pro version required.', 'control-listings');

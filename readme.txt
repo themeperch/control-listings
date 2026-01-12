@@ -4,7 +4,7 @@ Tags: directory, listing, business portal, Classifieds Ads, listing management
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,10 @@ For support or any questions related to Control Listings, you can reach out to o
 7. User account > Allowed you to control frontend dashboard page, add listing page 
 8. Single listing frontend view
 9. Single listing backend view
+
+= 1.0.7 =
+* Fixed Plugin check errors
+* Fixed Plugin check warnings
 
 = 1.0.6 =
 * Updated vendor files

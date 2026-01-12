@@ -32,7 +32,7 @@ function control_listings_get_social_link_svg( $uri, $size = 24 ) {
 endif;
 
 
-function ctrl_listings_meta_query(){
+function control_listings_meta_query(){
     
 }
 
@@ -201,7 +201,7 @@ function control_listing_loop_start(){
     ];
     $column = control_listings_option('ctrl_listings_archive_column_class', 3);
     $column = empty($column)? 3 : $column;
-    $GLOBALS['listings_column'] = (int)$column;
+    $GLOBALS['control_listings_column'] = (int)$column;
     $args['column_class'] = "row-cols-1 row-cols-lg-{$column}";
     control_listings_locate_template('loop/loop-start.php', $args);
 }

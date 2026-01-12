@@ -80,7 +80,7 @@ if(!function_exists('control_listings_sanitize_taxonomy_name')):
  * @return 	string
  */
 function control_listings_sanitize_taxonomy_name( $taxonomy ) {
-	return apply_filters( 'sanitize_taxonomy_name', urldecode( sanitize_title( urldecode( $taxonomy ?? '' ) ) ), $taxonomy );
+	return apply_filters( 'control_listings_sanitize_taxonomy_name', urldecode( sanitize_title( urldecode( $taxonomy ?? '' ) ) ), $taxonomy );
 }
 endif;
 
@@ -568,13 +568,13 @@ function control_listings_stock_amount( $amount ) {
 endif;
 
 
-if(!function_exists('get_control_listings_price_format')):
+if(!function_exists('control_listings_get_price_format')):
 /**
  * Get the price format depending on the currency position.
  *
  * @return string
  */
-function get_control_listings_price_format() {
+function control_listings_get_price_format() {
 	$currency_pos = control_listings_setting( 'currency_pos' );
 	$format       = '%1$s%2$s';
 
@@ -647,7 +647,7 @@ if(!function_exists('control_listings_price')):
  *     @type bool   $ex_tax_label       Adds exclude tax label.
  *                                      Defaults to false.
  *     @type string $currency           Currency code.
- *                                      Defaults to empty string (Use the result from get_control_listings_currency()).
+ *                                      Defaults to empty string (Use the result from control_listings_get_currency()).
  *     @type string $decimal_separator  Decimal separator.
  *                                      Defaults the result of control_listings_get_price_decimal_separator().
  *     @type string $thousand_separator Thousand separator.
@@ -655,7 +655,7 @@ if(!function_exists('control_listings_price')):
  *     @type string $decimals           Number of decimals.
  *                                      Defaults the result of control_listings_get_price_decimals().
  *     @type string $price_format       Price format depending on the currency position.
- *                                      Defaults the result of get_control_listings_price_format().
+ *                                      Defaults the result of control_listings_get_price_format().
  * }
  * @return string
  */
@@ -670,7 +670,7 @@ function control_listings_price( $price, $args = array() ) {
 				'decimal_separator'  => control_listings_get_price_decimal_separator(),
 				'thousand_separator' => control_listings_get_price_thousand_separator(),
 				'decimals'           => control_listings_get_price_decimals(),
-				'price_format'       => get_control_listings_price_format(),
+				'price_format'       => control_listings_get_price_format(),
 			)
 		)
 	);
@@ -689,7 +689,7 @@ function control_listings_price( $price, $args = array() ) {
 	 * @param 	float        	$raw_price      	Raw price.
 	 * @param 	float|string 	$original_price 	Original price as float, or empty string. Since 5.0.0.
 	 */
-	$price = apply_filters( 'raw_control_listings_price', $negative ? $price * -1 : $price, $original_price );
+	$price = apply_filters( 'control_listings_raw_price', $negative ? $price * -1 : $price, $original_price );
 
 	/**
 	 * Filter formatted price.
@@ -701,13 +701,13 @@ function control_listings_price( $price, $args = array() ) {
 	 * @param 	string       	$thousand_separator 	Thousand separator.
 	 * @param 	float|string 	$original_price     	Original price as float, or empty string. Since 5.0.0.
 	 */
-	$price = apply_filters( 'formatted_control_listings_price', number_format( $price, $args['decimals'], $args['decimal_separator'], $args['thousand_separator'] ), $price, $args['decimals'], $args['decimal_separator'], $args['thousand_separator'], $original_price );
+	$price = apply_filters( 'control_listings_formatted_price', number_format( $price, $args['decimals'], $args['decimal_separator'], $args['thousand_separator'] ), $price, $args['decimals'], $args['decimal_separator'], $args['thousand_separator'], $original_price );
 
 	if ( apply_filters( 'control_listings_price_trim_zeros', false ) && $args['decimals'] > 0 ) {
 		$price = control_listings_trim_zeros( $price );
 	}
 
-	$formatted_price = ( $negative ? '-' : '' ) . sprintf( $args['price_format'], '<span class="listing-price-currencySymbol">' . get_control_listings_currency_symbol( $args['currency'] ) . '</span>', $price );
+	$formatted_price = ( $negative ? '-' : '' ) . sprintf( $args['price_format'], '<span class="listing-price-currencySymbol">' . control_listings_get_currency_symbol( $args['currency'] ) . '</span>', $price );
 	$return          = '<span class="listing-price-amount amount"><bdi>' . $formatted_price . '</bdi></span>';
 
 
@@ -757,19 +757,19 @@ function control_listings_let_to_num( $size ) {
 }
 endif;
 
-if(!function_exists('get_control_listings_currency')):
+if(!function_exists('control_listings_get_currency')):
 /**
  * Get Base Currency Code.
  *
  * @return string
  */
-function get_control_listings_currency() {
+function control_listings_get_currency() {
 	return apply_filters( 'control_listings_currency', control_listings_setting( 'currency','USD' ) );
 }
 endif;
 
 
-if(!function_exists('get_control_listings_currencies')):
+if(!function_exists('control_listings_get_currencies')):
 /**
  * Get full list of currency codes.
  *
@@ -777,7 +777,7 @@ if(!function_exists('get_control_listings_currencies')):
  *
  * @return array
  */
-function get_control_listings_currencies() {
+function control_listings_get_currencies() {
 	static $currencies;
 
 	if ( ! isset( $currencies ) ) {
@@ -957,7 +957,7 @@ function get_control_listings_currencies() {
 }
 endif;
 
-if(!function_exists('get_control_listings_currency_symbols')):
+if(!function_exists('control_listings_get_currency_symbols')):
 /**
  * Get all available Currency symbols.
  *
@@ -965,7 +965,7 @@ if(!function_exists('get_control_listings_currency_symbols')):
  *
  * @return array
  */
-function get_control_listings_currency_symbols() {
+function control_listings_get_currency_symbols() {
 
 	$symbols = apply_filters(
 		'control_listings_currency_symbols',
@@ -1141,7 +1141,7 @@ function get_control_listings_currency_symbols() {
 }
 endif;
 
-if(!function_exists('get_control_listings_currency_symbol')):
+if(!function_exists('control_listings_get_currency_symbol')):
 /**
  * Get Currency symbol.
  *
@@ -1150,12 +1150,12 @@ if(!function_exists('get_control_listings_currency_symbol')):
  * @param 	string 	$currency 	Currency. (default: '').
  * @return 	string
  */
-function get_control_listings_currency_symbol( $currency = '$' ) {
+function control_listings_get_currency_symbol( $currency = '$' ) {
 	if ( ! $currency ) {
-		$currency = get_control_listings_currency();
+		$currency = control_listings_get_currency();
 	}
 
-	$symbols = get_control_listings_currency_symbols();
+	$symbols = control_listings_get_currency_symbols();
 
 	$currency_symbol = isset( $symbols[ $currency ] ) ? $symbols[ $currency ] : '';
 

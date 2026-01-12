@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
       <?php if( !empty($min_price) && !empty($max_price) ): ?>
       <div class="listings-price-search">  
          <div class="listing-range-slider">
-            <p class="listing-range-value"><?php esc_attr_e('Price:', 'control-listings') ?> <span class="min-value" data-value="<?php echo esc_attr($min_price) ?>"><?php echo esc_attr($min_price_active) ?></span> - <span class="max-value" data-value="<?php echo esc_attr($max_price) ?>"><?php echo esc_attr($max_price_active) ?></span> (in <?php echo esc_attr(get_control_listings_currency()); ?>)</p>
+            <p class="listing-range-value"><?php esc_attr_e('Price:', 'control-listings') ?> <span class="min-value" data-value="<?php echo esc_attr($min_price) ?>"><?php echo esc_attr($min_price_active) ?></span> - <span class="max-value" data-value="<?php echo esc_attr($max_price) ?>"><?php echo esc_attr($max_price_active) ?></span> (in <?php echo esc_attr(control_listings_get_currency()); ?>)</p>
             <div class="listing-range-bar"></div>    
             <input type="hidden" name="price" value="<?php echo esc_attr(get_query_var('price')); ?>"> 
           </div>   

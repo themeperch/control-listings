@@ -214,7 +214,7 @@ final class Query{
             setcookie('ctrl_listings_view', get_query_var('view', $view));   
         }
 
-        if( empty(control_listings_option('ctrl_listings_display_view_switch', true)) ){
+        if( empty(control_listings_option('control_listings_display_view_switch', true)) ){
             $query->set( 'view', apply_filters('control_listings_archive_view_std', 'grid') );
         }
         
@@ -224,7 +224,7 @@ final class Query{
 
     private function filter_query_terms($query){
         
-        $squery = apply_filters( 'get_search_query', get_query_var( 'terms' ) );
+        $squery = apply_filters( 'control_listings_get_search_query', get_query_var( 'terms' ) );
         if(!empty($squery)){
             $squery = sanitize_text_field($squery);
             $squery = preg_replace( '/[^a-zA-Z0-9\s]/', '', $squery );

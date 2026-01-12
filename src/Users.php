@@ -41,7 +41,7 @@ final class Users{
     }
 
 	public function get_avatar( $avatar, $id_or_email, $args ) {
-		if(check_is_inactive_control_listings_pro()){
+		if(control_listings_check_is_inactive_pro()){
 			return $avatar;
 		}
 		if ( is_numeric( $id_or_email ) ) {
@@ -90,8 +90,8 @@ final class Users{
 
 	public function user_login(){
 		if(is_user_logged_in()) return;
-		if(check_is_inactive_control_listings_pro()){
-			check_is_inactive_control_listings_pro(true);
+		if(control_listings_check_is_inactive_pro()){
+			control_listings_check_is_inactive_pro(true);
 			return;
 		}
 		echo do_shortcode('[mb_user_profile_login]');
@@ -99,8 +99,8 @@ final class Users{
 
 	public function user_register(){
 		if(is_user_logged_in()) return;
-		if(check_is_inactive_control_listings_pro()){
-			check_is_inactive_control_listings_pro(true);
+		if(control_listings_check_is_inactive_pro()){
+			control_listings_check_is_inactive_pro(true);
 			return;
 		}
 		echo do_shortcode('[mb_user_profile_register]');
@@ -108,8 +108,8 @@ final class Users{
 	
 
 	public function user_profile(){		
-		if(check_is_inactive_control_listings_pro()){
-			check_is_inactive_control_listings_pro(true);
+		if(control_listings_check_is_inactive_pro()){
+			control_listings_check_is_inactive_pro(true);
 			return;
 		}
 		

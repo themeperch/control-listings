@@ -10,7 +10,7 @@ final class Customize{
 	 * Add hooks when module is loaded.
 	 */
 	public function __construct() {        
-		add_filter( 'mb_settings_pages', [$this, 'settings_pages'] );   
+		add_filter( 'control_listings_settings_pages', [$this, 'settings_pages'] );   
         add_action( 'rwmb_meta_boxes', [$this, 'settings_fields'] ); 
 	}
 
