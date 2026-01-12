@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 use ControlListings\Favorite;
 
 add_action('control_listing_single_content_before', 'control_listing_single_content_gallery', 1);

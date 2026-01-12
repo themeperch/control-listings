@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings;
+defined( 'ABSPATH' ) || exit;
 
 class AdminColumn {
 	private $post_types = ['ctrl_listings'];

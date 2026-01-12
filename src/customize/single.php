@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return [
     [
         'desc' => __( 'Enable contact form in sidebar', 'control-listings' ),

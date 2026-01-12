@@ -1,5 +1,7 @@
 <?php
 namespace ControlListings\Fields;
+defined( 'ABSPATH' ) || exit;
+
 class Conditional_Logic {
 	private $has_conditions = false;
 	private $outside_conditions = null;
@@ -162,7 +164,7 @@ class Conditional_Logic {
 		$slugs    = (array) $slugs;
 		$sql      = "SELECT term_id FROM {$wpdb->terms} WHERE slug IN(" . implode( ', ', array_fill( 0, count( $slugs ), '%s' ) ) . ')';
 		$prepared = call_user_func_array( array( $wpdb, 'prepare' ), array_merge( array( $sql ), $slugs ) );
-		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter 
 		return array_map( 'intval', $wpdb->get_col( $prepared ) );
 	}
 }

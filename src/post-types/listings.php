@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $labels = [
     'name'                     => esc_html__( 'Listings', 'control-listings' ),
     'singular_name'            => esc_html__( 'Listing', 'control-listings' ),

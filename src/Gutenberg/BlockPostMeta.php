@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Gutenberg;
+defined( 'ABSPATH' ) || exit;
 
 class BlockPostMeta extends Block {
 	public function get_storage() {

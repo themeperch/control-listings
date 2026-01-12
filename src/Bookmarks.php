@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings;
+defined( 'ABSPATH' ) || exit;
 
 /**
  * ControlListings/Bookmarks class.

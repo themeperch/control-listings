@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 namespace ControlListings\Widgets;
 
 class Listing_Contact extends \Elementor\Widget_Base{

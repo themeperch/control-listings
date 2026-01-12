@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\TermMeta;
+defined( 'ABSPATH' ) || exit;
 
 use RWMB_Loader;
 

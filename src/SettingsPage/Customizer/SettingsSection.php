@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage\Customizer;
+defined( 'ABSPATH' ) || exit;
 
 use ControlListings\SettingsPage\Storage;
 use ControlListings\SettingsPage\Factory;

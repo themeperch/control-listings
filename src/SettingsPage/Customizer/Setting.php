@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage\Customizer;
+defined( 'ABSPATH' ) || exit;
 
 class Setting {
 	private $meta_box;

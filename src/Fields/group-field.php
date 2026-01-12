@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 use ControlListings\Fields\Group as RWMB_Group;
 use MetaBox\Support\Arr;
 /**

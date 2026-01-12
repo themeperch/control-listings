@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $meta_box = [
     'title'  => '',
     'id'     => 'control-listing-post-fields',

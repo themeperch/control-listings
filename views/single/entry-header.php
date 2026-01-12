@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <ul class="list-unstyled d-flex flex-wrap gap-15 border-top py-15 mb-0">
     <li class="d-inline-flex gap-5 align-items-center">
         <span class="text-primary"><?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'map', 16)); ?></span>

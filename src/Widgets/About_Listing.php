@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 namespace ControlListings\Widgets;
 
 class About_Listing extends \Elementor\Widget_Base{

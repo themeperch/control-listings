@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="listing-widget d-flex gap-15">
     
    <?php  if(has_post_thumbnail()) : ?>

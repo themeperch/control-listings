@@ -1,4 +1,5 @@
 
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="d-flex gap-3 justify-content-end">
     <?php if($switcher && get_query_var('view') != 'map'): ?>
         <div class="listing-view-switcher d-flex gap-10">              

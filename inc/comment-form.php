@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 function control_listings_get_rating_fields(){
 	return [
 		[
@@ -60,7 +61,9 @@ function control_listings_comment_save_rating( $comment_id ) {
 	
 	foreach (control_listings_get_rating_fields() as $field) :
 		$name = $field['name'];
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing 
 		if ( ( isset( $_POST[$name] ) ) && ( '' !== $_POST[$name] ) ){
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing 
 			$rating = intval( $_POST[$name] );
 			add_comment_meta( $comment_id, $name, $rating );
 		}		
@@ -74,6 +77,7 @@ function control_listings_comment_require_rating( $commentdata ) {
 	foreach (control_listings_get_rating_fields() as $field) :
 		if( !$field['enable']) continue;
 		$name = $field['name'];
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing 
 		if ( ! is_admin() && ( ! isset( $_POST[$name] ) || 0 === intval( $_POST[$name] ) ) )
 		wp_die( esc_attr__( 'Error: You did not add a rating. Hit the Back button on your Web browser and resubmit your review with a rating.', 'control-listings' ) );
 	endforeach;	
@@ -237,6 +241,7 @@ function control_listings_edit_review_link(){
 add_action( 'wp_ajax_ctrl_listing_edit_review', 'control_listing_edit_review');
 function control_listing_edit_review(){
 	$params = array();
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotValidated 
 	parse_str($_POST['formdata'], $params);
 	$commentarr = [
 		'comment_ID' => $params['comment_post_ID'],

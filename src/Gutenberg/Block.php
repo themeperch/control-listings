@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Gutenberg;
+defined( 'ABSPATH' ) || exit;
 
 class Block extends \RW_Meta_Box {
 	protected $storage;

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $specialities = get_post_meta(get_the_ID(), 'specialities', true);
 if(empty($specialities)) return;
 ?>

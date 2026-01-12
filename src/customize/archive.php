@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return [
     [
         'id'         => 'ctrl_listings_display_map_in_archive',

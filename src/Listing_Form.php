@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings;
+defined( 'ABSPATH' ) || exit;
 
 final class Listing_Form{
     /**

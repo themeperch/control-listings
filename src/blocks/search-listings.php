@@ -1,4 +1,5 @@
 <?php 
+defined( 'ABSPATH' ) || exit;
 return [
     'title'           => 'Search listings',
     'id'              => 'search-listings',

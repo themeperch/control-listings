@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage;
+defined( 'ABSPATH' ) || exit;
 
 class MetaBox extends \RW_Meta_Box {
 	protected $pages = [];

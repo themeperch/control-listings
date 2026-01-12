@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $terms = get_terms( array(
   'taxonomy' => $taxonomy,
   'orderby' => 'count',

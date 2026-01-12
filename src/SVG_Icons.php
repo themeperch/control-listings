@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 namespace ControlListings;
 /**
  * SVG Icons class

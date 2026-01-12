@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return [
     [
         'name' => __( 'Opening hours', 'control-listings' ),

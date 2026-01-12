@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return [
     [
         'id'         => 'listing_archive_page',

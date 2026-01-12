@@ -1,3 +1,6 @@
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <div class="offcanvas offcanvas-start"  data-bs-scroll="true" tabindex="-1" id="listingAdvancedSearch" aria-labelledby="listingAdvancedSearchLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="listingAdvancedSearchLabel"><?php esc_attr_e('Listing search', 'control-listings') ?></h5>

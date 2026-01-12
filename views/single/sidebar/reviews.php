@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $ratings = control_listings_get_ratings_by_type(get_the_ID());
 if(empty($ratings)) return;
 $count = 0;

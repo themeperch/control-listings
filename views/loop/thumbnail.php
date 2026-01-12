@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php if( has_post_thumbnail() ): ?>
     <div class="card-img-wrap position-relative">
         <?php the_post_thumbnail( $thumbnail_size , ['class' => 'card-img-top listing-image']); ?>

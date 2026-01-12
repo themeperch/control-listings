@@ -1,4 +1,4 @@
-
+<?php defined( 'ABSPATH' ) || exit; ?>
 <a href="<?php echo esc_url(admin_url('/customize.php?autofocus[panel]=listing-options')) ?>" target="_blank" class="button button-primary button-customize">Customize</a>
 
 

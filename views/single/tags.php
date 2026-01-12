@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $tag_list = get_the_term_list(get_the_ID(), 'listing_tag');    
 if( !empty($tag_list) && !is_wp_error($tag_list) ): ?>
 <div class="listing-tags pb-50 border-bottom">

@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage;
+defined( 'ABSPATH' ) || exit;
 
 class Factory {
 	private static $data = [

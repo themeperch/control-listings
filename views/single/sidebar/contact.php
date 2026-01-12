@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if(empty($shortcode)) return;
 ?>
 <div class="card card-widget single-listing-widget">  

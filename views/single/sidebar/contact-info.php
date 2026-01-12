@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="card card-widget single-listing-widget">
     <div class="card-body widget border-bottom pb-0">
         <h4 class="widget-title"><?php esc_attr_e('Contact Info', 'control-listings') ?></h4>

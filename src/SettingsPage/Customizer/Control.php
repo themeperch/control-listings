@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage\Customizer;
+defined( 'ABSPATH' ) || exit;
 
 class Control extends \WP_Customize_Control {
 	public $type = 'meta_box';

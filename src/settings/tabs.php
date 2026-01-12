@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return [
     'general'  => __('General', 'control-listings'),
     'listings'  => 'Listings Page',    

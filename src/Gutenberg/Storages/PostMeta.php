@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Gutenberg\Storages;
+defined( 'ABSPATH' ) || exit;
 
 /**
  * A wrapper of post storage with decorator pattern.

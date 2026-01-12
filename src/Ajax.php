@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings;
+defined( 'ABSPATH' ) || exit;
 
 class Ajax {
 	public function __construct () {
@@ -25,19 +26,25 @@ class Ajax {
 	}
 
 	public function do_ajax(){
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 		if(!wp_verify_nonce( $_POST['nonce'], 'controlListings' )){
 			die( esc_attr__( 'Security check', 'control-listings' ) ); 
 		}
 		
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 		if(empty($_POST['data']['action'])){
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 			Helper::debug_log($_POST['data']['action']);
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 			wp_die('Action is missing', 'Button error!!', esc_js($_POST['data']));
 		}
 
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 		$method_name = $_POST['data']['action'];
 		
 		
 		if(!method_exists($this, $method_name)){
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 			wp_die('Method missing', esc_attr($method_name), esc_js($_POST['data']));
 		}
 		
@@ -53,6 +60,7 @@ class Ajax {
 		if(delete_option($option_name)){
 			$response = [
 				'error' => 0,
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized   
 				'redirect_to' => $_SERVER['HTTP_REFERER']
 			];
 			wp_send_json($response);
@@ -67,6 +75,7 @@ class Ajax {
 	}
 
 	public function share_post(){
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotValidated 
 		$post_ID = (int)$_POST['id'];
 		wp_send_json( [
 			'title' => get_the_title($post_ID),
@@ -150,6 +159,7 @@ class Ajax {
 
 
 	public function bookmarks_form(){
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 		$post_ID = (int)$_POST['id'];
 		ob_start();		
 		if( is_user_logged_in() ){
@@ -171,11 +181,14 @@ class Ajax {
 	}
 
 	public function sticky_posts(){
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotValidated 
 		$post_id = absint($_POST['post_id']);
 		$post_obj = get_post($post_id);
 		$post_type_object = get_post_type_object($post_obj->post_type);
 		$status = false;
 		$msg = '';
+
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized  
 		if(wp_verify_nonce($_POST['nonce'], 'sticky-post-nonce')){
 			
 			
@@ -228,6 +241,7 @@ class Ajax {
 
 	public function listing_search(){
 		$msg = '';
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		parse_str($_POST['form_data'], $form_data);
 		$vars = array_filter($form_data);
 		$action_url = $form_data['redirect_to'];

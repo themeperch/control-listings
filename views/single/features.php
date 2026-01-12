@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $features = get_post_meta(get_the_ID(), 'features', true);
 if(empty($features)) return;
 ?>

@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage;
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Save all settings in a single option. $object_id is the option name.

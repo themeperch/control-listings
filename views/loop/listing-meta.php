@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <ul class="list-group list-group-flush">
     <li class="list-group-item">
         <?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'child')); ?>

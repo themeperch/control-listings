@@ -1,5 +1,6 @@
 <?php 
 namespace ControlListings\Fields;
+defined( 'ABSPATH' ) || exit;
 use RW_Meta_Box;
 
 class Tabs {

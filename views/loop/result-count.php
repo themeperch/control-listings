@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="d-flex gap-10">
     <span class="text-small text-showing">
         <?php

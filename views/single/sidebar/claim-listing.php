@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if(empty($title) || empty($email)) return;
 ?>
 <div class="card card-widget single-listing-widget">  

@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $opening_hours = get_post_meta(get_the_ID(), 'opening_hours', true);
 if($opening_hours != 'business_hour') return;
 $working_hours = get_post_meta(get_the_ID(), 'working_hours');

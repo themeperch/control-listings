@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Fields;
+defined( 'ABSPATH' ) || exit;
 
 class Geolocation {
 	public $is_google_maps_enqueued;

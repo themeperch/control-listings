@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $currency_code_options = get_control_listings_currencies();
 
 foreach ( $currency_code_options as $code => $name ) {

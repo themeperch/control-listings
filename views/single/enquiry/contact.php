@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <ul class="enquiry-contact list-unstyled d-flex flex-wrap justify-content-space-between gap-15 gap-lg-30 pt-15 mb-0">
     <li class="d-inline-flex gap-5 align-items-center">
         <span class="text-primary"><?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'phone', 16)); ?></span>

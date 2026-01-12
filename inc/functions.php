@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 require_once __DIR__ .'/functions-formatting.php';
 require_once __DIR__ .'/functions-listings.php';
 require_once __DIR__ .'/functions-listings-single.php';

@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <form class="d-grid gap-10 mb-30" method="get" action="<?php echo esc_url(control_listings_archive_page_url(true)) ?>">
     <div class="search-listings-wrapper listings-search-form d-flex flex-wrap gap-30 bg-white p-20 mb-20 border-bottom">
         <div class="input-group gap-2">

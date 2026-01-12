@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $prefix = '';
 $tabs = [
     'general'     => [

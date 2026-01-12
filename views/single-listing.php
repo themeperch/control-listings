@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header(); 
     do_action('control_listing_single_content_before');
     ?>

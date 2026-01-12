@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Gutenberg;
+defined( 'ABSPATH' ) || exit;
 
 class ActiveBlock {
 	private static $block_name;

@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="bookmarks text-primary d-flex align-self-center gap-15">
     <?php
         printf(

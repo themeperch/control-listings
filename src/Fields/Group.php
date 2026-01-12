@@ -1,6 +1,6 @@
 <?php
 namespace ControlListings\Fields;
-
+defined( 'ABSPATH' ) || exit;
 
 
 class Group {

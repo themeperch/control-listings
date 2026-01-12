@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\SettingsPage\Network;
+defined( 'ABSPATH' ) || exit;
 
 use ControlListings\SettingsPage\Storage as BaseStorage;
 

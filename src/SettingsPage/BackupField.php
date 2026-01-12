@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 class RWMB_Backup_Field extends RWMB_Textarea_Field {
 	public static function html( $meta, $field ) {
 		$storage_class = get_class( $field['storage'] );

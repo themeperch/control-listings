@@ -1,3 +1,6 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <div class="single-listing-tabs">
   <?php if( count($tabs) > 1 ): ?>
   <div class="nav d-flex flex-wrap gap-30 border-bottom mb-30" id="singleListingtab" role="tablist">

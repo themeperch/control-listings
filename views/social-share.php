@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <!-- Modal -->
 <div class="modal fade" id="listingSocialShare" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="listingSocialShareLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">

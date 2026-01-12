@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="card card-listing card-list flex-lg-row mb-30">
     
     <?php do_action('control_listing_loop_content_start'); ?>

@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="listing-slider-wrapper mx-lg-auto">
     <div class="swiper singleListingSlider">
         <div class="swiper-wrapper">

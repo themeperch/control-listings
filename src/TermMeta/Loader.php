@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\TermMeta;
+defined( 'ABSPATH' ) || exit;
 
 class Loader {
 	public function __construct() {

@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="card card-enquiry">
     <div class="card-body">
         <?php do_action('control_listing_single_enquiry_content'); ?>

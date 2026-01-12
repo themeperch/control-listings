@@ -6,7 +6,7 @@
  * @subpackage control-listings
  * @since Citykid 1.0
  */
-
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $next = is_rtl() ? control_listings_get_icon_svg( 'ui', 'arrow_left' ) : control_listings_get_icon_svg( 'ui', 'arrow_right' );
 $prev = is_rtl() ? control_listings_get_icon_svg( 'ui', 'arrow_right' ) : control_listings_get_icon_svg( 'ui', 'arrow_left' );
 

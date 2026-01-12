@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings;
+defined( 'ABSPATH' ) || exit;
 
 final class Favorite{
     private $post_types = ['ctrl_listings'];

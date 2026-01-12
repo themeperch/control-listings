@@ -1,5 +1,6 @@
 <?php
 namespace ControlListings\Gutenberg\Storages;
+defined( 'ABSPATH' ) || exit;
 
 class Attributes {
 	private $data = [];

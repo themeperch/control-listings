@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <h2><?php esc_html_e( 'Favorite Listings', 'control-listings' ); ?></h2>
 
 

@@ -1,6 +1,6 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
-
-<h1 class="page-title fs-2"><?php esc_html_e( 'Nothing here', 'control-listings' ); ?></h1>
+<h2 class="page-title fs-2"><?php esc_html_e( 'Nothing here', 'control-listings' ); ?></h2>
 <?php if ( current_user_can( 'publish_posts' ) && !control_listings_count_posts_published() ) : ?>
 
 <?php

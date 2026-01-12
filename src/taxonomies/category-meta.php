@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 return array(
     'title'      => ' ',
     'taxonomies' => 'listing_cat', 

@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 namespace ControlListings;
 class Walker_Review extends \Walker_Comment {
 

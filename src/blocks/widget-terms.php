@@ -1,4 +1,5 @@
 <?php 
+defined( 'ABSPATH' ) || exit;
 return [
     'title'           => 'Listings Terms Widget',
     'id'              => 'widget-listing-terms',

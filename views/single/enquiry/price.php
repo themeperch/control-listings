@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="price-wrapper d-flex gap-10 flex-column flex-md-row align-items-md-center justify-content-md-between">    
     <div class="price text-dark">
     <?php echo wp_kses_post(control_listings_get_price_html()); ?>  

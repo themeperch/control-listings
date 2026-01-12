@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="listings-user-account row g-50 mb-30">
     <div class="col-lg-3">
     <ul class="nav flex-lg-column nav-pills" id="myAccount" role="tablist">
