@@ -136,6 +136,7 @@ For support or any questions related to Control Listings, you can reach out to o
 = 1.0.7 =
 * Fixed Plugin check errors
 * Fixed Plugin check warnings
+* Updated vendor files
 
 = 1.0.6 =
 * Updated vendor files

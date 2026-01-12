@@ -131,7 +131,8 @@ Contact our support team via our website or email for assistance.
 
 ### 1.0.7
 - Fixed Plugin check errors
-- Fixed Plugin check warnings
+- Fixed Plugin check warnings  
+- Updated vendor files  
 
 
 ### 1.0.6
