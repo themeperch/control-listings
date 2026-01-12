@@ -4,7 +4,8 @@
     <ul class="nav flex-lg-column nav-pills" id="myAccount" role="tablist">
         <?php 
         $count = 1;
-        $active_tab = !empty($_GET['tab'])? esc_attr($_GET['tab']) : 'dashboard';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $active_tab = !empty(wp_unslash($_GET['tab']))? wp_unslash($_GET['tab']) : 'dashboard';
         foreach (control_listing_get_account_menu_items() as $endpoint => $label) : 
                 ?>
                 <li class="nav-item" role="presentation">

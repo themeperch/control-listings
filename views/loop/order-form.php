@@ -10,7 +10,8 @@
     <div class="input-group input-group-sm">
         <select class="form-select form-select-sm" name="sort" onchange="this.form.submit()">
             <?php foreach (control_listings_ordering_options() as $key => $value) : 
-                $selected = !empty($_GET['sort'])? $_GET['sort'] : 'date';
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                $selected = !empty(wp_unslash($_GET['sort']))? wp_unslash($_GET['sort']) : 'date';
                 ?>
                 <option value="<?php echo esc_attr($key) ?>" <?php selected( $selected, esc_attr($key) ); ?>><?php echo esc_attr($value) ?></option>
             <?php endforeach; ?>

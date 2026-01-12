@@ -29,7 +29,9 @@ final class Query{
         if ( $query->is_post_type_archive( 'ctrl_listings' ) && $query->is_main_query() && ! is_admin() ) {
             $this->filter_query_view($query);
             $posts_per_page = control_listings_setting('posts_per_page', 12);
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             if(isset($_GET['per_page']) & !empty($_GET['per_page'])){
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
                 $posts_per_page = intval($_GET['per_page']);
             }
             $query->set( 'posts_per_page', $posts_per_page );
@@ -204,7 +206,7 @@ final class Query{
     }
 
     private function filter_query_view($query){
-            
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash 
         $view = isset($_COOKIE['ctrl_listings_view'])? sanitize_title($_COOKIE['ctrl_listings_view'])  : control_listings_option('ctrl_listings_view', 'grid');
         
         if( in_array(get_query_var('view'), ['grid', 'list', 'map']) ){

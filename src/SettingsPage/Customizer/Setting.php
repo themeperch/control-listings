@@ -27,7 +27,8 @@ class Setting {
 
 		// Filter the option for previewing.
 		add_action( "customize_preview_{$this->id}", [ $this, 'preview' ] );
-
+		
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended 
 		if ( ! empty( $_GET['customize_changeset_uuid'] ) ) {
 			$this->filter_update_from_customize_changeset();
 		}

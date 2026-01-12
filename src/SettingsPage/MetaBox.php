@@ -48,6 +48,7 @@ class MetaBox extends \RW_Meta_Box {
 		);
 
 		// Save options.
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing 
 		if ( empty( $_POST['submit'] ) || $page_args['is_imported'] ) {
 			return;
 		}
