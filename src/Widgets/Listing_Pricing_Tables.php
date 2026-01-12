@@ -48,8 +48,10 @@ class Listing_Pricing_Tables extends \Elementor\Widget_Base{
 			[
 				'label' => esc_html__( 'Title', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				/* translators: %s: Current year */
-				'default' => sprintf(esc_html__( "Listing price list %s. Buy your tickets now \nfor Listingor Conference", 'control-listings' ), date('Y')),
+				/* translators: %s: Current year */				
+				'default' => sprintf(esc_html__( "Listing price list %s. Buy your tickets now \nfor Listingor Conference", 'control-listings' ), 
+				// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date 
+				date('Y')),
 			]
 		);
         $this->add_control(

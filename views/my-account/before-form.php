@@ -1,1 +1,1 @@
-<p><a class="back-to-dashboard" href="<?php echo control_listings_user_dashboard_url(); ?>">&#171; <?php esc_attr_e('Back to Dashboard', 'control-listings'); ?></a></p>
+<p><a class="back-to-dashboard" href="<?php echo esc_url(control_listings_user_dashboard_url()); ?>">&#171; <?php esc_attr_e('Back to Dashboard', 'control-listings'); ?></a></p>

@@ -12,22 +12,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<table class="table ctrl-listings-bookmarks">
 		<thead>
 			<tr>
-				<th><?php _e( 'Bookmark', 'control-listings' ); ?></th>
-				<th><?php _e( 'Notes', 'control-listings' ); ?></th>
-				<th><?php _e( 'Actions', 'control-listings' ); ?></th>
+				<th><?php esc_attr_e( 'Bookmark', 'control-listings' ); ?></th>
+				<th><?php esc_attr_e( 'Notes', 'control-listings' ); ?></th>
+				<th><?php esc_attr_e( 'Actions', 'control-listings' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach ( $bookmarks as $bookmark ) : ?>
 				<tr>
 					<td>
-						<a href="<?php the_permalink( $bookmark->post_id ); ?>">
+						<a href="<?php echo esc_url( get_permalink( $bookmark->post_id ) ); ?>">
 							<?php the_post_thumbnail('thumbnail'); ?>
-							<?php echo get_the_title( $bookmark->post_id ); ?>
+							<?php echo esc_attr(get_the_title( $bookmark->post_id )); ?>
 						</a>						
 					</td>
 					<td>
-						<?php echo wpautop( wp_kses_post( $bookmark->bookmark_note ) ); ?>
+						<?php echo wp_kses_post( $bookmark->bookmark_note ) ; ?>
 					</td>
 					<td>
 						<ul class="ctrl-listings-bookmark-actions list-unstyled">
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								), $bookmark );
 
 								foreach ( $actions as $action => $value ) {
-									echo '<li><a href="' . esc_url( $value['url'] ) . '" class="ctrl-listings-bookmark-action-' . $action . '">' . $value['label'] . '</a></li>';
+									echo '<li><a href="' . esc_url( $value['url'] ) . '" class="ctrl-listings-bookmark-action-' . 	esc_attr($action) . '">' . esc_attr($value['label']) . '</a></li>';
 								}
 							?>
 						</ul>
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								
 			<?php if(empty($bookmarks)): ?>
 			<tr class="no-bookmarks-notice">
-				<td colspan="3" ><?php _e( 'You currently have no bookmarks', 'control-listings' ); ?></td>
+				<td colspan="3" ><?php esc_attr_e( 'You currently have no bookmarks', 'control-listings' ); ?></td>
 			</tr>
 			<?php endif; ?>
 		</tbody>

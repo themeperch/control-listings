@@ -27,14 +27,14 @@ $total_review_count = get_comments_number();
 		?>
 		<h2 id="headingReviews" class="comments-title">
 			<?php if ( '1' === $total_review_count ) : ?>
-				<?php /* translators: %s: Post title. */ printf(esc_html__( '1 review on %s', 'control-listings' ), get_the_title()); ?>
+				<?php /* translators: %s: Post title. */ printf(esc_html__( '1 review on %s', 'control-listings' ), esc_attr(get_the_title())); ?>
 			<?php else : ?>
 				<?php
 				printf(
 					/* translators: 1: Number of reviews, 2: Post title. */
 					esc_html( _nx( '%1$s review on %2$s', '%1$s reviews on %2$s', $total_review_count, 'Reviews title', 'control-listings' ) ),
 					esc_html( number_format_i18n( $total_review_count ) ),
-					get_the_title()
+					esc_attr(get_the_title())
 				);
 				?>
 			<?php endif; ?>
@@ -87,7 +87,7 @@ $total_review_count = get_comments_number();
 				'title_reply'        => esc_html__( 'Leave a review', 'control-listings' ),
 				'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
 				'title_reply_after'  => '</h3>',
-				'label_submit'         => __( 'Post Review', 'control-listings' ),
+				'label_submit'         => esc_html__( 'Post Review', 'control-listings' ),
 				'class_container' => 'comment-respond card',
 				'submit_field'         => '<p class="form-submit mb-0">%1$s %2$s</p>',
 			)
@@ -95,9 +95,9 @@ $total_review_count = get_comments_number();
 	else:
 		echo '<div class="alert alert-warning" role="alert">';
 		/* translators: %s: Post title. */
-		$modal_title = sprintf(__('Review on %s', 'control-listings'), get_the_title());
+		$modal_title = sprintf(esc_attr__('Review on %s', 'control-listings'), esc_attr(get_the_title()));
 		/* translators: %s: Login link. */
-		printf(__('Please %s to add/edit your review.', 'control-listings'), control_listings_login_link($modal_title));	
+		printf(esc_html__('Please %s to add/edit your review.', 'control-listings'), esc_url(control_listings_login_link($modal_title)));	
 		echo '</div>';
 	endif;
 	?>

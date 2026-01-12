@@ -40,7 +40,9 @@ class Listing_Videos extends \Elementor\Widget_Base{
 				'label' => esc_html__( 'Name', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				/* translators: %s: Current year */
-				'default' => sprintf(esc_html__( 'Welcome to Listingor Conference %s', 'control-listings' ), date('Y')),
+				'default' => sprintf(esc_html__( 'Welcome to Listingor Conference %s', 'control-listings' ), 
+				// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+				date('Y')),
 				'label_block' => true
 			]
 		);
@@ -67,6 +69,7 @@ class Listing_Videos extends \Elementor\Widget_Base{
 			[
 				'label' => esc_html__( 'Date', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
+				// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 				'default' => 'October 3, '.date('Y'),
 				'picker_options' => [
 					'altFormat' => 'F j, Y',
@@ -125,6 +128,7 @@ class Listing_Videos extends \Elementor\Widget_Base{
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
+						// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 						'date' => sprintf('October 3, %s', date('Y')),
 						'title' => esc_html__( 'Virtual sessions. Listingor Live@MAX', 'control-listings' ),
 						'video_url' => 'https://www.youtube.com/embed/SZEflIVnhH8',
@@ -132,6 +136,7 @@ class Listing_Videos extends \Elementor\Widget_Base{
 						'size' => 'col-lg-6'
 					],
 					[
+						// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 						'date' => sprintf('October 4, %s', date('Y')),
 						'title' => esc_html__( 'Opening', 'control-listings' ),
 						'video_url' => 'https://www.youtube.com/embed/SZEflIVnhH8',
@@ -139,6 +144,7 @@ class Listing_Videos extends \Elementor\Widget_Base{
 						'size' => 'col-sm-6 col-lg-3'
 					],
 					[
+						// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 						'date' => sprintf('October 12, %s', date('Y')),
 						'title' => esc_html__( 'Inspiration Art', 'control-listings' ),
 						'video_url' => 'https://www.youtube.com/embed/SZEflIVnhH8',

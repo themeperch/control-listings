@@ -44,22 +44,22 @@ class Walker_Review extends \Walker_Comment {
 						}
 
 						printf(	'<span class="reviewr-name">%1$s <span class="says">%2$s</span></span>',
-							sprintf( '<b class="fn">%s</b>', $comment_author ), __('says:', 'control-listings')
+							sprintf( '<b class="fn">%s</b>', esc_attr($comment_author ) ), esc_attr__('says:', 'control-listings')
 						);
 						?>
 						<?php
 						printf(
 							'<a href="%s"><time datetime="%s">%s</time></a>',
 							esc_url( get_comment_link( $comment, $args ) ),
-							get_comment_time( 'c' ),
+							esc_attr(get_comment_time( 'c' )),
 							sprintf(
 								/* translators: 1: Comment date, 2: Comment time. */
-								_x( '%1$s at %2$s', 'Comments date time', 'control-listings' ),
-								get_comment_date( '', $comment ),
-								get_comment_time()
+								esc_attr_x( '%1$s at %2$s', 'Comments date time', 'control-listings' ),
+								esc_attr(get_comment_date( '', $comment )),
+								esc_attr(get_comment_time())
 							)
 						);
-                        echo control_listings_get_comment_rating();
+                        control_listings_get_comment_rating('rating', true);
 						
 						?>
                         
@@ -98,7 +98,7 @@ class Walker_Review extends \Walker_Comment {
                             if( !$field['enable']) continue;
                             $name = $field['name'];
                             $rating = control_listings_get_comment_rating($name);
-                            echo !empty($rating)? '<div class="col"><span class="text-uppercase">'.$field['label'].'</span>'.$rating.'</div>' : '';
+                            echo !empty($rating)? '<div class="col"><span class="text-uppercase">'.esc_attr($field['label']).'</span>'.wp_kses_post($rating).'</div>' : '';
                             
                         endforeach;    
                         ?>

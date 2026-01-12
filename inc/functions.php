@@ -94,8 +94,8 @@ function control_listings_locate_template( $template_name, $args = array() ) {
 	
 	if ( file_exists( get_stylesheet_directory() . $templates_dir . $template_name ) ) {
 		$located = get_stylesheet_directory() . $templates_dir . $template_name;
-	} elseif ( file_exists( TEMPLATEPATH . $templates_dir . $template_name ) ) {
-		$located = TEMPLATEPATH . $templates_dir . $template_name;
+	} elseif ( file_exists( get_template_directory() . $templates_dir . $template_name ) ) {
+		$located = get_template_directory() . $templates_dir . $template_name;
 	} elseif(file_exists( $supported_active_theme_dir . $template_name )){
 		$located = $supported_active_theme_dir . $template_name;
 	} 
@@ -144,8 +144,8 @@ function control_listings_template( $template_names, $load = false, $require_onc
 
 		if ( file_exists( get_stylesheet_directory() . $templates_dir . $template_name ) ) {
 			$located = get_stylesheet_directory() . $templates_dir . $template_name;
-		} elseif ( file_exists( TEMPLATEPATH . $templates_dir . $template_name ) ) {
-			$located = TEMPLATEPATH . $templates_dir . $template_name;
+		} elseif ( file_exists( get_template_directory() . $templates_dir . $template_name ) ) {
+			$located = get_template_directory() . $templates_dir . $template_name;
 		}elseif(file_exists( $supported_active_theme_dir . $template_name )){
 			$located = $supported_active_theme_dir . $template_name;			
 		}
@@ -245,6 +245,10 @@ function control_listings_content( $content, $before = '', $after = '', $echo = 
 	}
 }
 endif;
+
+function control_listings_content_html($content){
+	return apply_filters('control_listings_content_html', $content);
+}
 
 if(!function_exists('control_listings_css_class')):
 /**

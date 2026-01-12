@@ -85,6 +85,7 @@ class Bookmarks {
 							"WHERE `user_id` = %d  AND `p`.`post_status` = 'publish' " .
 							"ORDER BY {$order_by} {$order_dir} ".
 							"LIMIT %d, %d;", $user_id, $offset, $limit );
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 			$results     = $wpdb->get_results( $sql_query );
 			$max_results = $wpdb->get_var( "SELECT FOUND_ROWS()" );
 
@@ -98,6 +99,7 @@ class Bookmarks {
 										 "LEFT JOIN `{$wpdb->posts}` `p` ON `bm`.`post_id`=`p`.`ID` " .
 										 "WHERE `user_id` = %d AND `p`.`post_status` = 'publish' " .
 										 "ORDER BY {$order_by} {$order_dir}", $user_id );
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared 
 			return $wpdb->get_results( $sql_query );
 		}
 	}
@@ -308,7 +310,7 @@ class Bookmarks {
 		// Get post_ids to be removed from user.
 		$sql_query = $wpdb->prepare( "SELECT post_id FROM `{$wpdb->prefix}control_listings_bookmarks` " .
 			"WHERE `user_id` = %d", $user_id );
-
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared 
 		$results = $wpdb->get_results( $sql_query );
 
 		// Delete user bookmarks.
@@ -347,7 +349,7 @@ class Bookmarks {
 			"WHERE `u`.`user_email` = %s AND `bm`.`user_id` = `u`.`id` AND `bm`.`post_id` = `p`.`ID` " .
 			"ORDER BY `bm`.`post_id` ".
 			"LIMIT %d, %d;", $email_address, $offset, $limit );
-
+		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		$results      = $wpdb->get_results( $sql_query );
 		$export_items = [];
 

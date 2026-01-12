@@ -42,14 +42,14 @@ final class Meta_Boxes{
 			}
 
 			printf('<div class="misc-pub-section"><a id="%s" title="%s" class="%s" %s href="javascript:void(0);" data-id="%d" data-nonce="%s"><span class="dashicons %s"></span></a> %s</div>',
-				'stiky-post-'.$post_id,
-				is_sticky($post_id)? __('Featured listing', 'control-listings') : __('Click to make listing featured', 'control-listings'),
-				$hyperlink_class,
-				$hyperlink_style,
-				$post_id,
-				wp_create_nonce('sticky-post-nonce'),
-				$icon_class,
-                __('Featured status', 'control-listings'),
+				'stiky-post-'.intval($post_id),
+				is_sticky($post_id)? esc_attr__('Featured listing', 'control-listings') : esc_attr__('Click to make listing featured', 'control-listings'),
+				esc_attr($hyperlink_class),
+				esc_attr($hyperlink_style),
+				intval($post_id),
+				esc_attr(wp_create_nonce('sticky-post-nonce')),
+				esc_attr($icon_class),
+                esc_attr__('Featured status', 'control-listings'),
 			);
 
             

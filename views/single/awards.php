@@ -8,7 +8,7 @@ if(empty($awards)) return;
             <div class="listing-award border-bottom pb-30">
                 <div class="row gy-10">
                     <div class="col-lg-4">
-                        <img src="<?php echo control_listings_get_attachment_url($award['image']); ?>" alt="<?php echo esc_attr($award['title']) ?>" width="300" class="img-fluid border" />
+                        <img src="<?php echo esc_url(control_listings_get_attachment_url($award['image'])); ?>" alt="<?php echo esc_attr($award['title']) ?>" width="300" class="img-fluid border" />
                     </div>
                     <div class="col-lg-8 award-details d-flex flex-column">
                         <?php control_listings_formated_content($award['title'], '<h5 class="award-title mb-0">', '</h5>') ?>

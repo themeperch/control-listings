@@ -13,14 +13,17 @@ $attributes = [
 $searchform_args = control_listings_get_searchform_args();
 ?>
 <form method="get" action="<?php echo esc_url(control_listings_archive_page_url()) ?>">
-    <div <?php echo implode(' ', array_filter($attributes)); ?>>
+    <div <?php 
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    echo implode(' ', array_filter($attributes)); 
+    ?>>
         <div class="input-group search-listings-group">  
             <input type="text" name="terms" class="form-control" value="<?php echo esc_attr(get_query_var('terms')); ?>" placeholder="<?php echo esc_attr($search_placeholder) ?>">
             <?php if( !empty($searchform_args['min_age']) && !empty($searchform_args['max_age']) ): ?>
             <select class="form-select age-select" name="age">
                 <option><?php echo esc_attr($age_placeholder) ?></option>
                 <?php for ($year=$searchform_args['min_age']; $year < $searchform_args['max_age']; $year++) : ?>
-                    <option value="<?php echo intval($year) ?>"><?php /* translators: %s is the number of years. */ printf(__('%d Year', 'control-listings'), $year) ?></option>
+                    <option value="<?php echo intval($year) ?>"><?php /* translators: %s is the number of years. */ printf(esc_attr__('%d Year', 'control-listings'), esc_attr($year)) ?></option>
                 <?php endfor; ?>                
             </select>
             <?php endif; ?>
@@ -38,7 +41,7 @@ $searchform_args = control_listings_get_searchform_args();
                 <?php endforeach; ?>
             </select>
             <?php endif; ?>
-            <input type="text" class="form-control" name="zip" value="<?php echo get_query_var('zip'); ?>" placeholder="<?php echo esc_attr($zip_placeholder) ?>">
+            <input type="text" class="form-control" name="zip" value="<?php echo esc_attr(get_query_var('zip')); ?>" placeholder="<?php echo esc_attr($zip_placeholder) ?>">
             <input class="btn btn-primary" type="submit" value="<?php echo esc_attr($button_text) ?>">
         </div>
         <p class="mb-0"><?php echo esc_attr(str_replace('total_listings', control_listings_count_posts_published(), $footer_text)); ?></p>

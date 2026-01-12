@@ -80,7 +80,7 @@ function control_listings_comment_require_rating( $commentdata ) {
 	return $commentdata;
 }
 
-function control_listings_get_comment_rating($name="rating"){
+function control_listings_get_comment_rating($name="rating", $echo = false){
 	$stars = '';
 	if ( $rating = get_comment_meta( get_comment_ID(), $name, true ) ) {
 		$stars = '<div class="stars type-rating" data-type="'.$name.'" data-rating="'.$rating.'">';
@@ -93,7 +93,10 @@ function control_listings_get_comment_rating($name="rating"){
 		$stars .= '</div>';
 		
 	} 
-
+	if($echo){
+		echo wp_kses_post($stars);
+		return;
+	}	
 	return $stars;
 }
 

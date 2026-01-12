@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="listingSocialShareLabel"><?php // translators: %s is the post title. printf(__('Share: %s', 'control-listings'), '<span class="post-title"></span>') ?></h1>
+        <h2 class="modal-title fs-5" id="listingSocialShareLabel"><?php // translators: %s is the post title. printf(__('Share: %s', 'control-listings'), '<span class="post-title"></span>') ?></h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -26,7 +26,7 @@
         <div class="social-medias d-flex flex-wrap gap-10 justify-content-center">
             <?php 
             foreach ($social_medias as $key => $value) {
-               printf('<a class="btn btn-outline-dark btn-%1$s listing_social_share" data-type="%1$s" href="#">%3$s %2$s</a>', $key, $value, control_listings_get_icon_svg('social', $key, '18'));
+               printf('<a class="btn btn-outline-dark btn-%1$s listing_social_share" data-type="%1$s" href="#">%3$s %2$s</a>', esc_attr($key), esc_attr($value), wp_kses_post(control_listings_get_icon_svg('social', $key, '18')));
             }
             ?>
         </div>

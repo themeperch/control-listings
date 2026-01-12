@@ -35,7 +35,7 @@
                     <div class="d-flex align-items-start gap-2">
                     <?php  
                     if(has_post_thumbnail()){
-                        echo '<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'thumbnail').'" width="40" height="40" class="rounded" alt="">';
+                        echo '<img src="'.esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')).'" width="40" height="40" class="rounded" alt="">';
                     }
                     ?>
                     <?php echo wp_kses_post($title); ?>
@@ -48,16 +48,16 @@
             <?php endif; ?>
 
             <?php if ( in_array( 'status', $columns ) ) : ?>
-                <td><?php echo get_post_status_object( get_post_status() )->label ?></td>
+                <td><?php echo esc_attr(get_post_status_object( get_post_status() )->label) ?></td>
             <?php endif; ?>
 
             <td class="mbfs-actions">
                 <div class="d-flex">
                 <?php
                     if( current_user_can('administrator') ){
-                        echo '<a href="' . esc_url( add_query_arg( 'listings_frontend_post_id', get_the_ID(), $edit_page_atts['url'] ) ) . '" title="' . esc_html( 'Edit', 'control-listings' ) . '"><img src="' . MBFS_URL . 'assets/pencil.svg"></a>';
+                        echo '<a href="' . esc_url( add_query_arg( 'listings_frontend_post_id', get_the_ID(), $edit_page_atts['url'] ) ) . '" title="' . esc_html( 'Edit', 'control-listings' ) . '"><img src="' . esc_url(MBFS_URL . 'assets/pencil.svg') . '"></a>';
                     }else{
-                        echo (get_post_status() != 'pending')? '<a href="' . esc_url( add_query_arg( 'listings_frontend_post_id', get_the_ID(), $edit_page_atts['url'] ) ) . '" title="' . esc_html( 'Edit', 'control-listings' ) . '"><img src="' . MBFS_URL . 'assets/pencil.svg"></a>' : '<a class="text-white" href="#" title="' . esc_html( 'Reviewing', 'control-listings' ) . '">'.control_listings_get_icon_svg('ui', 'clock').'</a>';
+                        echo (get_post_status() != 'pending')? '<a href="' . esc_url( add_query_arg( 'listings_frontend_post_id', get_the_ID(), $edit_page_atts['url'] ) ) . '" title="' . esc_html( 'Edit', 'control-listings' ) . '"><img src="' . esc_url(MBFS_URL . 'assets/pencil.svg') . '"></a>' : '<a class="text-white" href="#" title="' . esc_html( 'Reviewing', 'control-listings' ) . '">' . wp_kses_post(control_listings_get_icon_svg('ui', 'clock')) . '</a>';
                     }
                                        
                

@@ -4,7 +4,7 @@
 
 <?php
 if ( empty( $favorites ) ) {
-	echo '<div colspan="4" class="mbfp-notice">' . __( 'You haven\'t added any posts yet', 'control-listings' ) . '</div>';
+	echo '<div colspan="4" class="mbfp-notice">' . esc_attr__( 'You haven\'t added any posts yet', 'control-listings' ) . '</div>';
 	return;
 }
 ?>
@@ -30,7 +30,7 @@ if ( empty( $favorites ) ) {
 
 			<tr data-id="<?php echo esc_attr( $post_id ) ?>">
 				<td>
-					<a href="<?php echo get_the_permalink( $post_id ) ?>">
+					<a href="<?php echo esc_url(get_the_permalink( $post_id )) ?>">
 						<?php echo esc_html( get_the_title( $post_id ) ) ?>
 					</a>
 				</td>

@@ -2,8 +2,8 @@
 <div class="d-flex gap-3 justify-content-end">
     <?php if($switcher && get_query_var('view') != 'map'): ?>
         <div class="listing-view-switcher d-flex gap-10">              
-            <a class="btn btn-sm <?php echo (empty(get_query_var('view')) || get_query_var('view') != 'list')? 'btn-dark' : 'text-dark border border-2' ?>" href="<?php echo add_query_arg('view', 'grid'); ?>"><?php echo control_listings_get_icon_svg('ui', 'grid', 18) ?></a>  
-            <a class="btn btn-sm <?php echo get_query_var('view') == 'list'? 'btn-dark' : 'text-dark border border-2' ?>" href="<?php echo add_query_arg('view', 'list'); ?>"><?php echo control_listings_get_icon_svg('ui', 'list', 18) ?></a>  
+            <a class="btn btn-sm <?php echo (empty(get_query_var('view')) || get_query_var('view') != 'list')? 'btn-dark' : 'text-dark border border-2' ?>" href="<?php echo esc_url(add_query_arg('view', 'grid')); ?>"><?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'grid', 18)) ?></a>  
+            <a class="btn btn-sm <?php echo get_query_var('view') == 'list'? 'btn-dark' : 'text-dark border border-2' ?>" href="<?php echo esc_url(add_query_arg('view', 'list')); ?>"><?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'list', 18)) ?></a>  
         </div>
     <?php endif; ?>
     <div class="input-group input-group-sm">

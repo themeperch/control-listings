@@ -14,7 +14,10 @@ $attributes = [
 <h4 class="widget-title mb-20"><?php echo esc_attr($title); ?></h4>
 <?php endif; ?>
 
-<div <?php echo join(' ', array_filter($attributes)); ?>>
+<div <?php 
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+echo join(' ', array_filter($attributes)); 
+?>>
   <?php
     $query_args = control_listings_query_args_by_type($type, ['posts_per_page' => $posts_per_page]);
     $the_query = new WP_Query( $query_args );

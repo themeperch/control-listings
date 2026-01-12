@@ -67,8 +67,8 @@ class SettingsPage {
 			$class .= " rwmb-settings-tabs-{$this->tab_style}";
 		}
 		?>
-		<div class="<?= esc_attr( $class ) ?>">
-			<h1><?= esc_html( get_admin_page_title() ) ?></h1>
+		<div class="<?php echo esc_attr( $class ) ?>">
+			<h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
 
 			<div class="rwmb-settings-wrap">
 				<?php $this->output_tab_nav() ?>
@@ -81,7 +81,7 @@ class SettingsPage {
 							wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 							wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
 							?>
-							<div id="post-body" class="metabox-holder columns-<?= intval( $this->columns ); ?>">
+							<div id="post-body" class="metabox-holder columns-<?php echo intval( $this->columns ); ?>">
 								<?php if ( $this->columns > 1 ) : ?>
 									<div id="postbox-container-1" class="postbox-container">
 										<?php do_meta_boxes( null, 'side', null ); ?>
@@ -133,7 +133,7 @@ class SettingsPage {
 				$icon = $tab['icon'] ? '<i class="' . esc_attr( $tab['icon'] ) . '"></i>' : '';
 			}
 
-			printf( '<a href="#tab-%s" class="nav-tab">%s%s</a>', esc_attr( $id ), $icon, esc_html( $tab['label'] ) );
+			printf( '<a href="#tab-%s" class="nav-tab">%s%s</a>', esc_attr( $id ), wp_kses_post( $icon ), esc_html( $tab['label'] ) );
 		}
 		echo '</h2>';
 	}

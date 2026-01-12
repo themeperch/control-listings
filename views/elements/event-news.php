@@ -54,11 +54,11 @@ $the_query = new WP_Query( [
                             <?php 
                             $categories_list = '<span class="label"'.get_the_category_list( '</span> <span class="label">' ).'</span>';
                             if ( $categories_list ) {
-                                printf($categories_list);
+                                printf(wp_kses_post($categories_list));
                             }
                             ?>
                             <?php the_title( '<h5 class="card-title">', '</h5>' ); ?>                            
-                            <p class="card-desc"><?php echo wp_trim_words( get_the_excerpt(), 30 ); ?></p>
+                            <p class="card-desc"><?php echo wp_kses_post(wp_trim_words( get_the_excerpt(), 30 )); ?></p>
                             <a class="blog-btn" href="<?php the_permalink(); ?>"><?php echo esc_attr($read_more_text) ?></a>
                         </div>
                     </div>

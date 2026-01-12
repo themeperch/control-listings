@@ -75,7 +75,9 @@ class Slider extends \Elementor\Widget_Base{
 				'label' => esc_html__( 'Big title', 'control-listings' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				/* translators: %s: Current year */
-				'default' => sprintf(esc_html__( 'CONF %s', 'control-listings' ), date('Y')),
+				'default' => sprintf(esc_html__( 'CONF %s', 'control-listings' ), 
+				// phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+				date('Y')),
 			]
 		);
 

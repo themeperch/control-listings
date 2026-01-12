@@ -158,6 +158,7 @@ class Tabs {
 				}
 
 				echo '<div class="rwmb-tab-panel rwmb-tab-panel-' . esc_attr( $tab ) . '" data-panel="' . esc_attr( $tab ) . '">';
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo implode( '', $fields );
 				echo '</div>';
 			}

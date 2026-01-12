@@ -11,7 +11,10 @@ $attributes = [
 wp_enqueue_style('ctrl-listings-swiper');
 wp_enqueue_script('ctrl-listings-swiper');
 ?>
-<div <?php echo join(' ', array_filter($attributes)); ?>>
+<div <?php
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+ echo join(' ', array_filter($attributes)); 
+ ?>>
   <?php if( count($display) > 1 ): ?>
   <div class="nav d-flex flex-wrap mx-auto gap-30 mb-30" id="singleListingtab" role="tablist">
       <?php 

@@ -30,7 +30,10 @@ extract(wp_parse_args( $args, [
             ];
             ?>
         <div class="listing-countdown info-countdown">
-            <div class="counter-box d-flex justify-content-around" <?php echo implode(' ', $countdown_atts) ?>></div>
+            <div class="counter-box d-flex justify-content-around" <?php
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+            echo implode(' ', $countdown_atts); 
+            ?>></div>
             <?php if(!empty($dots['url'])): ?>
             <div class="dots img-moving-anim2">
                 <img src="<?php echo esc_url( $dots['url'] ); ?>" alt="<?php esc_attr_e('Shadow Image', 'control-listings') ?>">

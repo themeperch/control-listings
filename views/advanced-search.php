@@ -8,7 +8,7 @@
     <?php control_listings_template_part('filter-form') ?>
     <form class="listings-search-form d-grid gap-30" method="get" action="<?php echo esc_url(control_listings_archive_page_url()) ?>">
       <div class="listings-search-terms">
-        <input type="text" name="terms" value="<?php echo get_query_var('terms'); ?>" id="listingSearchInput" class="form-control" placeholder="<?php esc_attr_e('Enter keywords...', 'control-listings') ?>" autofocus="true" />
+        <input type="text" name="terms" value="<?php echo esc_attr(get_query_var('terms')); ?>" id="listingSearchInput" class="form-control" placeholder="<?php esc_attr_e('Enter keywords...', 'control-listings') ?>" autofocus="true" />
         <?php do_action('control_listings_search_form_fields'); ?>        
       </div>
       <?php if( !empty($min_age) && !empty($max_age) ): ?>
@@ -16,7 +16,7 @@
          <div class="listing-range-slider">
             <p class="listing-range-value"><?php esc_attr_e('Age:', 'control-listings') ?> <span class="min-value" data-value="<?php echo esc_attr($min_age) ?>"><?php echo esc_attr($min_age_active) ?></span> - <span class="max-value" data-value="<?php echo esc_attr($max_age) ?>"><?php echo esc_attr($max_age_active) ?></span> (in Years)</p>
             <div class="listing-range-bar"></div>    
-            <input type="hidden" name="age" value="<?php echo get_query_var('age'); ?>"> 
+            <input type="hidden" name="age" value="<?php echo esc_attr(get_query_var('age')); ?>"> 
           </div>   
       </div>
       <?php endif; ?>
@@ -24,9 +24,9 @@
       <?php if( !empty($min_price) && !empty($max_price) ): ?>
       <div class="listings-price-search">  
          <div class="listing-range-slider">
-            <p class="listing-range-value"><?php esc_attr_e('Price:', 'control-listings') ?> <span class="min-value" data-value="<?php echo esc_attr($min_price) ?>"><?php echo esc_attr($min_price_active) ?></span> - <span class="max-value" data-value="<?php echo esc_attr($max_price) ?>"><?php echo esc_attr($max_price_active) ?></span> (in <?php echo get_control_listings_currency(); ?>)</p>
+            <p class="listing-range-value"><?php esc_attr_e('Price:', 'control-listings') ?> <span class="min-value" data-value="<?php echo esc_attr($min_price) ?>"><?php echo esc_attr($min_price_active) ?></span> - <span class="max-value" data-value="<?php echo esc_attr($max_price) ?>"><?php echo esc_attr($max_price_active) ?></span> (in <?php echo esc_attr(get_control_listings_currency()); ?>)</p>
             <div class="listing-range-bar"></div>    
-            <input type="hidden" name="price" value="<?php echo get_query_var('price'); ?>"> 
+            <input type="hidden" name="price" value="<?php echo esc_attr(get_query_var('price')); ?>"> 
           </div>   
       </div>
       <?php endif; ?>
@@ -46,11 +46,11 @@
                 <label class="btn btn-sm btn-outline-secondary" for="listing-term-<?php echo esc_attr($term->term_id) ?>"><?php echo esc_attr($term->name .' ('. $term->count.')') ?></label>
               </div>
           <?php endforeach; ?>
-          <input type="hidden" name="lcat" value="<?php echo implode(',', $lcat_active) ?>" />
+          <input type="hidden" name="lcat" value="<?php echo esc_attr(implode(',', $lcat_active)) ?>" />
         </div>
       </div>
       <?php endif; ?>
-      <input type="hidden" name="redirect_to" value="<?php echo control_listings_archive_page_url() ?>" />
+      <input type="hidden" name="redirect_to" value="<?php echo esc_url(control_listings_archive_page_url()) ?>" />
       <input type="submit"  data-bs-dismiss="offcanvas" value="<?php esc_attr_e('Filter', 'control-listings') ?>" />      
 
     </form>

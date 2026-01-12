@@ -5,7 +5,7 @@
         <div class="card-img-top-content listing-categories small text-uppercase position-absolute start-0 bottom-0"><?php control_listings_get_categories(''); ?></div>
         <?php endif; ?>
         <?php  if(is_sticky()): ?>
-            <div class="listing-categories small text-uppercase position-absolute start-0 top-0"><span class="badge text-bg-secondary d-inline-flex gap-1 align-items-center"><?php echo control_listings_get_icon_svg('ui', 'star-fill', 12) ?> Featured</span></div>
+            <div class="listing-categories small text-uppercase position-absolute start-0 top-0"><span class="badge text-bg-secondary d-inline-flex gap-1 align-items-center"><?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'star-fill', 12)) ?> Featured</span></div>
         <?php endif; ?>
     </div>
 <?php endif; ?>

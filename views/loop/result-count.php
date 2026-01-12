@@ -20,6 +20,6 @@
     <a class="advanced-filter text-heading text-decoration-underline" data-bs-toggle="offcanvas" href="#listingAdvancedSearch"><?php esc_attr_e('Filter results', 'control-listings') ?></a>  
     <?php endif; ?>
     <?php if( !empty(control_listings_option('ctrl_listings_display_view_switch')) ): ?>
-    <a class="text-heading text-decoration-underline" href="<?php echo add_query_arg('view', get_query_var('view') == 'map'? 'grid' : 'map'); ?>"><?php echo get_query_var('view') == 'map'? __('Classic view', 'control-listings') : __('Map view', 'control-listings') ?></a>
+    <a class="text-heading text-decoration-underline" href="<?php echo esc_url(add_query_arg('view', get_query_var('view') == 'map'? 'grid' : 'map')); ?>"><?php echo get_query_var('view') == 'map'? esc_attr__('Classic view', 'control-listings') : esc_attr__('Map view', 'control-listings') ?></a>
     <?php endif; ?>
 </div>

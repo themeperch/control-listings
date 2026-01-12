@@ -12,7 +12,7 @@ $count = 0;
                 <div class="carousel-item shadow-bottom<?php echo esc_attr(($active_class)) ?>">
                     <img src="<?php echo esc_url($video['thumbnail']); ?>" alt="<?php echo esc_attr($video['title']) ?>" class="img-fluid" />
                     <a class="popup-video position-absolute start-0 top-50 w-100 text-center mt-n30" href="<?php echo esc_url($video['link']); ?>">
-                        <?php echo control_listings_get_icon_svg('ui', 'play', 60); ?>
+                        <?php echo wp_kses_post(control_listings_get_icon_svg('ui', 'play', 60)); ?>
                     </a> 
                     <div class="carousel-caption d-none d-md-block text-white">
                         <?php control_listings_formated_content($video['title'], '<h5>', '</h5>'); ?>

@@ -4,7 +4,7 @@
 
     <div class="card-body">        
         <h3 class="card-title post-title fs-4">
-            <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h3>    
     
         <?php control_listings_template_part('loop/listing-meta') ?>

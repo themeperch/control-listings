@@ -11,7 +11,7 @@ $count = 0;
                     <h4 class="widget-title mb-15"><?php esc_attr_e('Reviews', 'control-listings'); ?></h4>
                 <?php endif; ?>
                 <span class="text-uppercase"><?php echo esc_attr($rating['label']) ?></span>                
-                <span class="fs-5"><?php echo control_listings_get_star_ratings_html($rating['average']); ?></span>               
+                <span class="fs-5"><?php echo wp_kses_post(control_listings_get_star_ratings_html($rating['average'])); ?></span>               
             </li>
             <?php $count++; ?>
         <?php endforeach; ?>     

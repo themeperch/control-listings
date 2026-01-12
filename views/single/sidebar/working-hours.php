@@ -18,7 +18,13 @@ $count = 0;
                 if(!empty($working_hour['closed']) && $working_hour['closed']){
                     esc_attr_e('Closed', 'control-listings');
                 }else{
-                    printf('%s - %s', date("g:i A", strtotime($working_hour['start_time'])), date("g:i A", strtotime($working_hour['end_time'])));
+                    printf(
+                        '%s - %s',
+                        // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+                        esc_html( date( 'g:i A', strtotime( $working_hour['start_time'] ) ) ),
+                        // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+                        esc_html( date( 'g:i A', strtotime( $working_hour['end_time'] ) ) )
+                    );
                 }
                 ?>
                 </p>

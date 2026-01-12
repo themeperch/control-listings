@@ -36,12 +36,12 @@ $uniqueID = uniqid();
                             $show_class =  $key == 0? '  show' : '';                                    
                             ?>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading-<?php echo esc_attr( $uniqueID ).'-'.$key; ?>">
-                                    <button class="accordion-button<?php echo esc_attr($collapsed_class)  ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo esc_attr( $uniqueID ).'-'.$key; ?>" aria-expanded="<?php echo esc_attr($aria_expand)  ?>" aria-controls="collapse-<?php echo esc_attr( $uniqueID ).'-'.$key; ?>">
+                                <h2 class="accordion-header" id="heading-<?php echo esc_attr( $uniqueID ).'-'.esc_attr($key); ?>">
+                                    <button class="accordion-button<?php echo esc_attr($collapsed_class)  ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo esc_attr( $uniqueID ).'-'.esc_attr($key); ?>" aria-expanded="<?php echo esc_attr($aria_expand)  ?>" aria-controls="collapse-<?php echo esc_attr( $uniqueID ).'-'.esc_attr($key); ?>">
                                         <?php control_listings_content($faq['question']); ?>
                                     </button>
                                 </h2>
-                                <div id="collapse-<?php echo esc_attr( $uniqueID ).'-'.$key; ?>" class="accordion-collapse collapse<?php echo esc_attr($show_class)  ?>" aria-labelledby="heading-<?php echo esc_attr( $uniqueID ).'-'.$key; ?>" data-bs-parent="#accordion-<?php echo esc_attr( $uniqueID ); ?>">
+                                <div id="collapse-<?php echo esc_attr( $uniqueID ).'-'.esc_attr($key); ?>" class="accordion-collapse collapse<?php echo esc_attr($show_class)  ?>" aria-labelledby="heading-<?php echo esc_attr( $uniqueID ).'-'.esc_attr($key); ?>" data-bs-parent="#accordion-<?php echo esc_attr( $uniqueID ); ?>">
                                     <div class="accordion-body">
                                         <?php control_listings_content($faq['answer']); ?>
                                     </div>

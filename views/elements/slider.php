@@ -26,7 +26,7 @@ $slide_args = [
 
 ?>
 <!-- hero sec start -->
-<section class="hero-sec"  style="background-image: url(<?php echo get_theme_file_uri( 'assets/images/banner/group.png' ) ?>);">
+<section class="hero-sec"  style="background-image: url(<?php echo esc_url(get_theme_file_uri( 'assets/images/banner/group.png' )) ?>);">
     <div class="hero-slider-wrap">
         <?php
         foreach ($slides as $key => $slide):           
@@ -63,7 +63,7 @@ $slide_args = [
                         <img src="<?php echo esc_url($media_image2['url']); ?>" alt="<?php echo esc_attr($title) ?>">
                     </div>
                     <?php endif; ?>
-                    <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots2.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-2 img-moving-anim3">
+                    <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots2.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-2 img-moving-anim3">
                 </div>
             <?php endif; ?>
 
@@ -76,7 +76,7 @@ $slide_args = [
                         <?php endif; ?>
                     </div>
                 </div>
-                <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots2.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-5 img-moving-anim3">                
+                <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots2.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-5 img-moving-anim3">                
             <?php endif; ?>
             <?php $column2_html = ob_get_clean(); ?>
 
@@ -91,7 +91,7 @@ $slide_args = [
                                     <?php control_listings_content($title, '<h3 class="item-title1">', '</h3>'); ?>
                                     <?php control_listings_content($subtitle, '<p class="item-sub">', '</p>'); ?>                                    
                                     <?php echo wp_kses_post($action_html); ?>
-                                    <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-1 opacity-50 img-moving-anim2">
+                                    <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-1 opacity-50 img-moving-anim2">
                                 </div>
                             </div>
                         </div><!-- Column 1 end -->
@@ -131,10 +131,10 @@ $slide_args = [
                         </div>
                      </div>
                      <div class="dots">
-                        <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots2.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-4 img-moving-anim2">
+                        <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots2.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-4 img-moving-anim2">
                      </div>
                   </div>
-                  <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots5.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-3 img-moving-anim3">
+                  <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots5.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-3 img-moving-anim3">
                </div>
             <?php endif; ?>   
 
@@ -149,13 +149,13 @@ $slide_args = [
                                     <?php control_listings_content($subtitle, '<p class="item-sub">', '</p>'); ?>
                                     
                                     <?php echo wp_kses_post($action_html); ?>
-                                 <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-1 img-moving-anim3">
+                                 <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-1 img-moving-anim3">
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-6 order-md-2 order-1">
                             <?php echo wp_kses_post($column2_html); ?>
-                           <img src="<?php echo get_theme_file_uri( 'assets/images/dots/dots2.png' ) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-5 img-moving-anim3">
+                           <img src="<?php echo esc_url(get_theme_file_uri( 'assets/images/dots/dots2.png' )) ?>" alt="<?php echo esc_attr($name) ?>" class="dots-5 img-moving-anim3">
                         </div>
                      </div>
                      <div class="highlight-text3 img-moving-anim4">

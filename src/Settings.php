@@ -115,18 +115,18 @@ final class Settings{
     public function settings_page_after_title(){
         printf(
             '<div id="control-listings-settings-page-notice" class="notice notice-info"><p><strong>%s</strong> %s</p></div>', 
-            __('Note:', 'control-listings'),
+            esc_attr__('Note:', 'control-listings'),
             /* translators: %s: Admin links  */
-            sprintf(__('If the archive page isn\'t functioning properly, try refreshing the %s. For optimal performance, consider using Pretty permalinks (e.g., Post name, Day and name, etc.). This can enhance the usability and SEO-friendliness of your site.
+            sprintf(esc_attr__('If the archive page isn\'t functioning properly, try refreshing the %s. For optimal performance, consider using Pretty permalinks (e.g., Post name, Day and name, etc.). This can enhance the usability and SEO-friendliness of your site.
             ', 'control-listings'), 
-            sprintf('<a href="'.admin_url('options-permalink.php').'" target="_blank"><strong>%s</strong></a>', __('Permalink Settings', 'control-listings'))),
+            sprintf('<a href="'.esc_url(admin_url('options-permalink.php')).'" target="_blank"><strong>%s</strong></a>', esc_attr__('Permalink Settings', 'control-listings'))),
         ); 
     }
 
     public function settings_page_submit_buttons(){
         $options = get_option($this->option_name, []);
         if(!empty($options)){
-            printf('<a href="#" class="button button-danger controlListingsReset" data-option_name="%s">%s</a>', $this->option_name, __('Reset', 'control-listings') );
+            printf('<a href="#" class="button button-danger controlListingsReset" data-option_name="%s">%s</a>', esc_attr($this->option_name), esc_attr__('Reset', 'control-listings') );
         }
         
     }
@@ -140,7 +140,7 @@ final class Settings{
        
 
         $meta_boxes[] = array (
-            'title' => __( 'Help & Support', 'control-listings' ),
+            'title' => esc_attr__('Help & Support', 'control-listings'),
             'id' => 'sidebar-support-settings',
             'context' => 'side',	
             'text_domain' => 'control-listings',

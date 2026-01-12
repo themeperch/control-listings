@@ -31,7 +31,7 @@
             <span class="text-uppercase mb-5"><?php esc_attr_e('Social links', 'control-listings') ?></span>
             <div class="d-flex gap-10">
                 <?php foreach ($social_links as $social): if(empty($social['link']) || empty($social['title'])) continue; ?>
-                    <a href="<?php echo esc_url($social['link']) ?>" title="<?php echo esc_attr($social['title']) ?>" target="_blank"><?php echo control_listings_get_social_link_svg( $social['link'], 24 ); ?></a>
+                    <a href="<?php echo esc_url($social['link']) ?>" title="<?php echo esc_attr($social['title']) ?>" target="_blank"><?php echo wp_kses_post(control_listings_get_social_link_svg( $social['link'], 24 )); ?></a>
                 <?php endforeach; ?>
             </div>
             
