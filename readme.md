@@ -1,14 +1,12 @@
 # Control Listings - Classifieds Ads Directory Portal Manager 
 [![WP compatibility](https://plugintests.com/plugins/wporg/control-listings/wp-badge.svg)](https://plugintests.com/plugins/wporg/control-listings/latest)  [![PHP compatibility](https://plugintests.com/plugins/wporg/control-listings/php-badge.svg)](https://plugintests.com/plugins/wporg/control-listings/latest)
 
-**Contributors:** themeperch, razib_  
-**Tags:** directory, listing, business portal, Classifieds Ads, listing management  
+
 **Requires at least:** WordPress 6.0  
 **Tested up to:** 6.9  
 **Requires PHP:** 7.4  
 **Stable tag:** 1.0.7  
-**License:** GPLv2 or later  
-**License URI:** [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
+**License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 ---
 
