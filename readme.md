@@ -1,4 +1,5 @@
-# Control Listings - Classifieds Ads Directory Portal Manager
+# Control Listings - Classifieds Ads Directory Portal Manager 
+[![WP compatibility](https://plugintests.com/plugins/wporg/control-listings/wp-badge.svg)](https://plugintests.com/plugins/wporg/control-listings/latest)  [![PHP compatibility](https://plugintests.com/plugins/wporg/control-listings/php-badge.svg)](https://plugintests.com/plugins/wporg/control-listings/latest)
 
 **Contributors:** themeperch, razib_  
 **Tags:** directory, listing, business portal, Classifieds Ads, listing management  
