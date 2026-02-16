@@ -37,7 +37,7 @@ echo join(' ', array_filter($attributes));
               <p class="mb-0"><?php /* translators: %s is the number of listings. */ printf(esc_attr__('%s Listings', 'control-listings'),  absint($term->count)) ?></p>              
             </div>
             <div class="position-absolute bottom-0 start-0 w-100">
-              <a class="btn btn-sm btn-primary stretched-link d-block mx-20" href="<?php echo esc_url(get_term_link($term, 'listing_cat')); ?>"><?php esc_attr__('Browse Listings', 'control-listings') ?></a>
+              <a class="btn btn-sm btn-primary stretched-link d-block mx-20" href="<?php echo esc_url(get_term_link($term, 'listing_cat')); ?>"><?php esc_attr_e('Browse Listings', 'control-listings') ?></a>
             </div>
             
           </div>
